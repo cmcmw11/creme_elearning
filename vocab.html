@@ -334,6 +334,16 @@
 
   // โหลด CSV ตอนเปิดหน้า
   window.onload = loadCSVData;
+    function checkLoginStatus() {
+  // ใช้ localStorage แทน sessionStorage
+  const loggedIn = localStorage.getItem('loggedIn');
+  if (!loggedIn) {
+    window.location.href = 'login.html'; // ถ้าไม่ได้ล็อกอินจะกลับไปหน้า login.html
+  }
+}
+
+window.onload = checkLoginStatus;
+
 </script>
 
 </body>
