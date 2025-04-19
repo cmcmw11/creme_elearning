@@ -97,6 +97,7 @@
       border-radius: 20px;
       font-size: 0.9rem;
       cursor: pointer;
+      margin-right: 0.5rem;
     }
 
     footer {
@@ -130,9 +131,16 @@
   <footer>© 2025 Creme E-Learning</footer>
 
   <script>
-    // ฟังก์ชันสำหรับพูดคำศัพท์และประโยค
-    function speak(text) {
-      const utter = new SpeechSynthesisUtterance(text);
+    // ฟังก์ชันสำหรับพูดคำศัพท์
+    function speakWord(word) {
+      const utter = new SpeechSynthesisUtterance(word);
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
+    }
+
+    // ฟังก์ชันสำหรับพูดประโยค
+    function speakSentence(sentence) {
+      const utter = new SpeechSynthesisUtterance(sentence);
       utter.lang = 'en-US';
       speechSynthesis.speak(utter);
     }
@@ -174,7 +182,8 @@
                 <div class="meaning">${translation}</div>
                 <div class="example">${exampleSentence}</div>
                 <div class="sound">
-                  <button onclick="speak('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
+                  <button onclick="speakWord('${word}')">🔊 ฟังเสียงคำศัพท์</button>
+                  <button onclick="speakSentence('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
                 </div>
               `;
 
