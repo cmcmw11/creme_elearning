@@ -134,11 +134,12 @@
     }
 
     .home-container {
-      display: flex;
-      justify-content: center;
-      margin-top: auto;
-      padding-bottom: 1.5rem;
-    }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+}
 
     .home-btn {
       background-color: #ffb6c1;
@@ -199,22 +200,18 @@
       </select>
     </div>
 
-    <div class="cards" id="cardContainer">
+  <div class="cards" id="cardContainer">
   <!-- การ์ดจาก CSV จะถูกเพิ่มที่นี่ -->
 </div>
 
-      </div>
-    </div>
-      
-      </div>
-    </div>
+<!-- ย้ายเข้ามาในนี้ -->
+<div class="home-container">
+  <button class="home-btn" onclick="window.location.href='index.html'">
+    🏠 กลับหน้าแรก
+  </button>
+</div>
 
-    <div class="home-container">
-      <button class="home-btn" onclick="window.location.href='index.html'">
-        🏠 กลับหน้าแรก
-      </button>
-    </div>
-  </div>
+
 
   <script>
     function speak(text) {
