@@ -28,7 +28,6 @@
       position: relative;
     }
 
-    /* เมนูสามขีด */
     .menu-btn {
       font-size: 2rem;
       cursor: pointer;
@@ -165,9 +164,13 @@
 
   <header>📖 เรียนคำศัพท์</header>
 
-  <!-- ช่องค้นหา และตัวกรอง A-Z -->
+  <!-- ช่องค้นหา -->
   <div class="filter">
     <input type="text" id="search" placeholder="ค้นหาคำศัพท์..." onkeyup="searchVocabulary()">
+  </div>
+
+  <!-- ตัวกรอง A-Z -->
+  <div class="filter">
     <select id="alphabetFilter" onchange="filterByAlphabet()">
       <option value="">เลือกตัวอักษร</option>
       <option value="A">A</option>
@@ -274,24 +277,18 @@
                 <div class="example">${exampleSentence}</div>
                 <div class="example-translation">${exampleTranslation}</div>
                 <div class="sound">
-                  <button onclick="speakWord('${word}')">🔊 ฟังเสียงคำศัพท์</button>
-                  <button onclick="speakSentence('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
+                  <button onclick="speakWord('${word}')">ฟังการออกเสียง</button>
+                  <button onclick="speakSentence('${exampleSentence}')">ฟังประโยค</button>
                 </div>
               `;
 
               cardsContainer.appendChild(card);
             }
           });
-        })
-        .catch(error => {
-          console.error('เกิดข้อผิดพลาดในการโหลด CSV:', error);
         });
     }
 
-    // เรียกใช้ฟังก์ชันโหลด CSV เมื่อโหลดหน้า
-    window.onload = function() {
-      loadVocabulary();
-    };
+    window.onload = loadVocabulary;
   </script>
 
 </body>
