@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>เรียนคำศัพท์ - Creme E-Learning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +12,7 @@
 
     body {
       margin: 0;
-      font-family: 'Sarabun', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #fffafc;
       color: #333;
     }
@@ -23,21 +23,60 @@
       padding: 1rem;
       font-weight: bold;
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       border-bottom: 2px solid #ffa3b5;
+    }
+
+    /* เมนูสามขีด */
+    .menu-btn {
+      display: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffc0cb;
+      width: 100%;
+      height: 100%;
+      padding-top: 60px;
+      text-align: center;
+    }
+
+    .menu a {
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      margin: 1rem;
+      display: block;
+    }
+
+    /* ปุ่มเปิดเมนู */
+    .menu-btn.active + .menu {
+      display: block;
     }
 
     .filter {
       padding: 1rem;
       text-align: center;
+      background-color: #ffe0e9;
+      border-radius: 10px;
     }
 
-    .filter select {
+    .filter input {
       padding: 0.5rem 1rem;
       border-radius: 20px;
       border: 1px solid #ffc2d1;
       background-color: #fff0f5;
       font-size: 1rem;
+      width: 80%;
     }
 
     .cards {
@@ -110,18 +149,20 @@
 </head>
 <body>
 
+  <!-- เมนูสามขีด -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu">
+    <a href="index.html">หน้าหลัก</a>
+    <a href="vocab.html">คำศัพท์</a>
+    <a href="practic.html">แบบฝึกหัด</a>
+    <a href="jobs.html">ตรวจแบบฝึกหัด</a>
+  </div>
+
   <header>📖 เรียนคำศัพท์</header>
 
+  <!-- ช่องค้นหา -->
   <div class="filter">
-    <label for="az">กรอง A-Z: </label>
-    <select id="az" onchange="filterAZ()">
-      <option value="">ทั้งหมด</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-      <!-- เพิ่มตามต้องการ -->
-    </select>
+    <input type="text" id="search" placeholder="ค้นหาคำศัพท์..." onkeyup="searchVocabulary()">
   </div>
 
   <div class="cards" id="cardContainer">
@@ -131,6 +172,12 @@
   <footer>© 2025 Creme E-Learning</footer>
 
   <script>
+    // ฟังก์ชันเปิด/ปิดเมนู
+    function toggleMenu() {
+      const menuButton = document.querySelector('.menu-btn');
+      menuButton.classList.toggle('active');
+    }
+
     // ฟังก์ชันสำหรับพูดคำศัพท์
     function speakWord(word) {
       const utter = new SpeechSynthesisUtterance(word);
@@ -145,14 +192,14 @@
       speechSynthesis.speak(utter);
     }
 
-    // ฟังก์ชันกรอง A-Z
-    function filterAZ() {
-      const value = document.getElementById('az').value;
+    // ฟังก์ชันกรองคำศัพท์
+    function searchVocabulary() {
+      const searchQuery = document.getElementById('search').value.toLowerCase();
       const cards = document.querySelectorAll('.card');
 
       cards.forEach(card => {
-        const word = card.dataset.word || '';
-        card.style.display = (!value || word.toUpperCase().startsWith(value)) ? 'block' : 'none';
+        const word = card.querySelector('.word').textContent.toLowerCase();
+        card.style.display = word.includes(searchQuery) ? 'block' : 'none';
       });
     }
 
@@ -174,7 +221,6 @@
             if (word && translation && partOfSpeech && exampleSentence && exampleTranslation) {
               const card = document.createElement('div');
               card.classList.add('card');
-              card.dataset.word = word;
 
               card.innerHTML = `
                 <div class="word">${word}</div>
