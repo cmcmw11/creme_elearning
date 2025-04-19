@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>เรียนคำศัพท์ - Creme E-Learning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +12,7 @@
 
     body {
       margin: 0;
-      font-family: 'Sarabun', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       background: #fffafc;
       color: #333;
     }
@@ -25,6 +25,25 @@
       text-align: center;
       font-size: 1.3rem;
       border-bottom: 2px solid #ffa3b5;
+    }
+
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffb6c1;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+    }
+
+    .home-btn:hover {
+      background-color: #ff99b2;
     }
 
     .filter {
@@ -106,9 +125,19 @@
       color: #aaa;
       margin: 2rem 0 1rem;
     }
+
+    /* เพิ่มสไตล์ให้ปุ่มโฮม */
+    .home-btn span {
+      font-size: 1.5rem;
+    }
   </style>
 </head>
 <body>
+
+  <!-- ปุ่มโฮม -->
+  <button class="home-btn" onclick="window.location.href='index.html'">
+    🏠 กลับหน้าแรก
+  </button>
 
   <header>📖 เรียนคำศัพท์</header>
 
@@ -180,7 +209,7 @@
                 <div class="word">${word}</div>
                 <div class="type">${partOfSpeech}</div>
                 <div class="meaning">${translation}</div>
-                <div class="example">${exampleSentence}</div>
+                <div class="example">${exampleSentence} <br><i>(${exampleTranslation})</i></div>
                 <div class="sound">
                   <button onclick="speakWord('${word}')">🔊 ฟังเสียงคำศัพท์</button>
                   <button onclick="speakSentence('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
