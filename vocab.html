@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>เรียนคำศัพท์ - Creme E-Learning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -27,27 +27,30 @@
       border-bottom: 2px solid #ffa3b5;
     }
 
-    .home-btn {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #ffb6c1;
-      color: white;
-      padding: 0.5rem 1rem;
-      font-size: 1.2rem;
-      border-radius: 25px;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+    .search-container {
+      text-align: center;
+      margin: 1rem 0 0.5rem;
     }
 
-    .home-btn:hover {
-      background-color: #ff99b2;
+    #searchInput {
+      width: 80%;
+      max-width: 350px;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      border: 1px solid #ffc0cb;
+      background: #fff0f5;
+      color: #333;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    #searchInput:focus {
+      box-shadow: 0 0 5px #ffb6c1;
     }
 
     .filter {
-      padding: 1rem;
+      padding: 0.5rem 1rem 1rem;
       text-align: center;
     }
 
@@ -119,21 +122,6 @@
       margin-right: 0.5rem;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #aaa;
-      margin: 2rem 0 1rem;
-    }
-
-    /* เพิ่มสไตล์ให้ปุ่มโฮม */
-    .home-btn span {
-      font-size: 1.5rem;
-    }
-  </style>
-    <style>
-    /* เพิ่มเข้าไปในส่วน <style> เดิม */
-
     .home-container {
       display: flex;
       justify-content: center;
@@ -155,43 +143,22 @@
     .home-btn:hover {
       background-color: #ff99b2;
     }
-      .search-container {
-  text-align: center;
-  margin-top: 1rem;
-}
 
-#searchInput {
-  width: 80%;
-  max-width: 350px;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border-radius: 25px;
-  border: 1px solid #ffc0cb;
-  background: #fff0f5;
-  color: #333;
-  outline: none;
-  transition: 0.3s;
-}
-
-#searchInput:focus {
-  box-shadow: 0 0 5px #ffb6c1;
-}
-
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin: 1rem 0;
+    }
   </style>
-
 </head>
 <body>
-<!-- ช่องค้นหาคำศัพท์ -->
-<div class="search-container">
-  <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
-</div>
-
-  <!-- ปุ่มโฮม -->
-  <button class="home-btn" onclick="window.location.href='index.html'">
-    🏠 กลับหน้าแรก
-  </button>
 
   <header>📖 เรียนคำศัพท์</header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
+  </div>
 
   <div class="filter">
     <label for="az">กรอง A-Z: </label>
@@ -208,7 +175,8 @@
   <div class="cards" id="cardContainer">
     <!-- การ์ดจะถูกสร้างจาก CSV -->
   </div>
-  <!-- ปุ่มโฮมอยู่ล่างกลาง -->
+
+  <!-- ปุ่มโฮมล่างสุด -->
   <div class="home-container">
     <button class="home-btn" onclick="window.location.href='index.html'">
       🏠 กลับหน้าแรก
@@ -218,43 +186,47 @@
   <footer>© 2025 Creme E-Learning</footer>
 
   <script>
-  function filterBySearch() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const cards = Array.from(document.querySelectorAll('.card'));
+    function filterBySearch() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = Array.from(document.querySelectorAll('.card'));
 
-  if (!input) {
-    // ถ้ากล่องค้นหาว่าง ให้แสดงทุกการ์ด
-    cards.forEach(card => card.style.display = 'block');
-    return;
-  }
-
-  let found = false;
-
-  cards.forEach((card, index) => {
-    const word = (card.dataset.word || '').toLowerCase();
-    if (!found && word.startsWith(input)) {
-      found = true;
-
-      // แสดงการ์ดตั้งแต่ตรงนี้ไปทั้งหมด
-      for (let i = 0; i < cards.length; i++) {
-        cards[i].style.display = (i >= index) ? 'block' : 'none';
+      if (!input) {
+        cards.forEach(card => card.style.display = 'block');
+        return;
       }
 
-      // เลื่อนไปที่การ์ดที่ตรง
-      setTimeout(() => {
-        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        card.style.border = '2px solid hotpink'; // ไฮไลต์น่ารัก ๆ
-        setTimeout(() => card.style.border = '', 1500); // เอาออกหลัง 1.5 วิ
-      }, 100);
+      let found = false;
+
+      cards.forEach((card, index) => {
+        const word = (card.dataset.word || '').toLowerCase();
+        if (!found && word.startsWith(input)) {
+          found = true;
+          for (let i = 0; i < cards.length; i++) {
+            cards[i].style.display = (i >= index) ? 'block' : 'none';
+          }
+
+          setTimeout(() => {
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            card.style.border = '2px solid hotpink';
+            setTimeout(() => card.style.border = '', 1500);
+          }, 100);
+        }
+      });
+
+      if (!found) {
+        cards.forEach(card => card.style.display = 'none');
+      }
     }
-  });
 
-  // ถ้าหาไม่เจอเลย ให้ซ่อนทั้งหมด
-  if (!found) {
-    cards.forEach(card => card.style.display = 'none');
-  }
-}
+    function filterAZ() {
+      const selected = document.getElementById('az').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
 
+      cards.forEach(card => {
+        const word = card.dataset.word.toLowerCase();
+        card.style.display = selected === "" || word.startsWith(selected) ? 'block' : 'none';
+      });
+    }
   </script>
 
 </body>
