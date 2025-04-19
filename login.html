@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เข้าสู่ระบบ - เว็บจำศัพท์</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #errorMsg {
+      color: red;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>เข้าสู่ระบบ</h2>
+    <form id="loginForm">
+      <label for="username">ชื่อผู้ใช้:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">รหัสผ่าน:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">เข้าสู่ระบบ</button>
+    </form>
+    <p id="errorMsg"></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // ล็อกอินได้แค่ Abc / 1234
+      const validUsers = {
+        Abc: "1234"
+      };
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (validUsers[username] && validUsers[username] === password) {
+        alert("เข้าสู่ระบบสำเร็จ!");
+        window.location.href = "index.html"; // ลิงก์ไปหน้าหลัก
+      } else {
+        document.getElementById("errorMsg").textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+      }
+    });
+  </script>
+</body>
+</html>

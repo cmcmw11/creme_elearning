@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เรียนคำศัพท์ - Creme E-Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+    }
+
+    header {
+      background: #ffc0cb;
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #ffa3b5;
+    }
+
+    .filter {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .filter select {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid #ffc2d1;
+      background-color: #fff0f5;
+      font-size: 1rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 1rem 2rem;
+    }
+
+    .card {
+      background: #ffe0e9;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 350px;
+      padding: 1rem 1.2rem;
+      margin: 0.8rem 0;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .word {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff4d6d;
+    }
+
+    .type {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+
+    .meaning {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .example {
+      font-style: italic;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .sound {
+      margin-top: 0.5rem;
+    }
+
+    .sound button {
+      background: #ffb6c1;
+      border: none;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      margin: 2rem 0 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>📖 เรียนคำศัพท์</header>
+
+  <div class="filter">
+    <label for="az">กรอง A-Z: </label>
+    <select id="az" onchange="filterAZ()">
+      <option value="">ทั้งหมด</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+      <!-- เพิ่มตามต้องการ -->
+    </select>
+  </div>
+
+  <div class="cards" id="cardContainer">
+    <!-- การ์ดจะถูกสร้างจาก CSV -->
+  </div>
+
+  <footer>© 2025 Creme E-Learning</footer>
+
+  <script>
+    // ฟังก์ชันสำหรับพูดคำศัพท์และประโยค
+    function speak(text) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
+    }
+
+    // ฟังก์ชันกรอง A-Z
+    function filterAZ() {
+      const value = document.getElementById('az').value;
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const word = card.dataset.word || '';
+        card.style.display = (!value || word.toUpperCase().startsWith(value)) ? 'block' : 'none';
+      });
+    }
+
+    // ฟังก์ชันโหลด CSV และแสดงการ์ด
+    function loadVocabulary() {
+      fetch('vocabulary.csv')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          const cardsContainer = document.getElementById('cardContainer');
+          
+          // ลบการ์ดเก่าทิ้งก่อน (ในกรณีที่มีการโหลดใหม่)
+          cardsContainer.innerHTML = '';
+
+          lines.forEach(line => {
+            const [word, translation, partOfSpeech, exampleSentence, exampleTranslation] = line.split(',');
+
+            // ตรวจสอบว่ามีข้อมูลครบทุกคอลัมน์ก่อนสร้างการ์ด
+            if (word && translation && partOfSpeech && exampleSentence && exampleTranslation) {
+              const card = document.createElement('div');
+              card.classList.add('card');
+              card.dataset.word = word;
+
+              card.innerHTML = `
+                <div class="word">${word}</div>
+                <div class="type">${partOfSpeech}</div>
+                <div class="meaning">${translation}</div>
+                <div class="example">${exampleSentence}</div>
+                <div class="sound">
+                  <button onclick="speak('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
+                </div>
+              `;
+
+              cardsContainer.appendChild(card);
+            }
+          });
+        })
+        .catch(error => {
+          console.error('เกิดข้อผิดพลาดในการโหลด CSV:', error);
+        });
+    }
+
+    // เรียกใช้ฟังก์ชันโหลด CSV เมื่อโหลดหน้า
+    window.onload = function() {
+      loadVocabulary();
+    };
+  </script>
+
+</body>
+</html>
