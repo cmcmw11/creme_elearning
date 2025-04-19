@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>เรียนคำศัพท์ - Creme E-Learning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +12,7 @@
 
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Sarabun', sans-serif;
       background: #fffafc;
       color: #333;
     }
@@ -25,13 +25,12 @@
       text-align: center;
       font-size: 1.5rem;
       border-bottom: 2px solid #ffa3b5;
+      position: relative;
     }
 
     /* เมนูสามขีด */
     .menu-btn {
-      display: none;
       font-size: 2rem;
-      padding: 10px;
       cursor: pointer;
       position: absolute;
       top: 1rem;
@@ -68,6 +67,7 @@
       text-align: center;
       background-color: #ffe0e9;
       border-radius: 10px;
+      margin: 1rem 0;
     }
 
     .filter input {
@@ -76,7 +76,8 @@
       border: 1px solid #ffc2d1;
       background-color: #fff0f5;
       font-size: 1rem;
-      width: 80%;
+      width: 100%;
+      max-width: 350px;
     }
 
     .cards {
@@ -122,6 +123,11 @@
       font-style: italic;
       font-size: 1rem;
       color: #666;
+    }
+
+    .example-translation {
+      font-size: 1rem;
+      color: #888;
     }
 
     .sound {
@@ -227,6 +233,7 @@
                 <div class="type">${partOfSpeech}</div>
                 <div class="meaning">${translation}</div>
                 <div class="example">${exampleSentence}</div>
+                <div class="example-translation">${exampleTranslation}</div>
                 <div class="sound">
                   <button onclick="speakWord('${word}')">🔊 ฟังเสียงคำศัพท์</button>
                   <button onclick="speakSentence('${exampleSentence}')">🔊 ฟังเสียงประโยค</button>
