@@ -155,10 +155,36 @@
     .home-btn:hover {
       background-color: #ff99b2;
     }
+      .search-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 350px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 1px solid #ffc0cb;
+  background: #fff0f5;
+  color: #333;
+  outline: none;
+  transition: 0.3s;
+}
+
+#searchInput:focus {
+  box-shadow: 0 0 5px #ffb6c1;
+}
+
   </style>
 
 </head>
 <body>
+<!-- ช่องค้นหาคำศัพท์ -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
+</div>
 
   <!-- ปุ่มโฮม -->
   <button class="home-btn" onclick="window.location.href='index.html'">
@@ -261,6 +287,17 @@
     window.onload = function() {
       loadVocabulary();
     };
+    function filterBySearch() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const word = (card.dataset.word || '').toLowerCase();
+    const example = (card.textContent || '').toLowerCase();
+    card.style.display = (word.includes(input) || example.includes(input)) ? 'block' : 'none';
+  });
+}
+
   </script>
 
 </body>
