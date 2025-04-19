@@ -3,96 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>เข้าสู่ระบบ - เว็บจำศัพท์</title>
+  <title>เข้าสู่ระบบ - Creme E-Learning</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f2f2f2;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #fffafc;
+      text-align: center;
     }
 
     .login-container {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       width: 300px;
+      margin: 100px auto;
+      background: #ffebf2;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      margin-top: 1rem;
-    }
-
-    input, button {
+    .input-field {
       width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ffb6c1;
+      font-size: 1rem;
     }
 
-    button {
-      background-color: #007bff;
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff4d6d;
       color: white;
-      font-weight: bold;
       border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
       cursor: pointer;
     }
 
-    button:hover {
-      background-color: #0056b3;
+    .login-btn:hover {
+      background-color: #ff3366;
     }
 
-    #errorMsg {
+    .error-msg {
       color: red;
-      text-align: center;
-      margin-top: 1rem;
+      font-size: 0.9rem;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+
   <div class="login-container">
     <h2>เข้าสู่ระบบ</h2>
-    <form id="loginForm">
-      <label for="username">ชื่อผู้ใช้:</label>
-      <input type="text" id="username" required>
-
-      <label for="password">รหัสผ่าน:</label>
-      <input type="password" id="password" required>
-
-      <button type="submit">เข้าสู่ระบบ</button>
-    </form>
-    <p id="errorMsg"></p>
+    <input type="text" id="username" class="input-field" placeholder="ชื่อผู้ใช้" />
+    <input type="password" id="password" class="input-field" placeholder="รหัสผ่าน" />
+    <button class="login-btn" onclick="login()">เข้าสู่ระบบ</button>
+    <p class="error-msg" id="error-msg"></p>
   </div>
 
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    // ฟังก์ชันล็อกอิน
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('error-msg');
 
-      // ล็อกอินได้แค่ Abc / 1234
-      const validUsers = {
-        Abc: "1234"
-      };
+      // ข้อมูลที่ต้องการให้ตรง
+      const correctUsername = 'Abc';
+      const correctPassword = '1234';
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      if (validUsers[username] && validUsers[username] === password) {
-        alert("เข้าสู่ระบบสำเร็จ!");
-        window.location.href = "index.html"; // ลิงก์ไปหน้าหลัก
+      // ตรวจสอบข้อมูลที่กรอก
+      if (username === correctUsername && password === correctPassword) {
+        // เก็บข้อมูลผู้ใช้ที่ล็อกอินแล้วใน sessionStorage
+        sessionStorage.setItem('loggedIn', 'true');
+        window.location.href = 'vocab.html'; // เมื่อสำเร็จให้ไปหน้า vocab.html
       } else {
-        document.getElementById("errorMsg").textContent = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+        // แสดงข้อความผิดพลาด
+        errorMsg.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
       }
-    });
+    }
   </script>
+
 </body>
 </html>
