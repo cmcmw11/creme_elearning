@@ -15,6 +15,19 @@
       font-family: 'Quicksand', sans-serif;
       background: #fffafc;
       color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+      padding-bottom: 3rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(255,182,193,0.2);
     }
 
     header {
@@ -33,8 +46,7 @@
     }
 
     #searchInput {
-      width: 80%;
-      max-width: 350px;
+      width: 85%;
       padding: 0.6rem 1rem;
       font-size: 1rem;
       border-radius: 25px;
@@ -42,7 +54,6 @@
       background: #fff0f5;
       color: #333;
       outline: none;
-      transition: 0.3s;
     }
 
     #searchInput:focus {
@@ -50,7 +61,7 @@
     }
 
     .filter {
-      padding: 0.5rem 1rem 1rem;
+      padding: 0.5rem 1rem;
       text-align: center;
     }
 
@@ -72,8 +83,7 @@
     .card {
       background: #ffe0e9;
       border-radius: 20px;
-      width: 90%;
-      max-width: 350px;
+      width: 95%;
       padding: 1rem 1.2rem;
       margin: 0.8rem 0;
       box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
@@ -125,7 +135,8 @@
     .home-container {
       display: flex;
       justify-content: center;
-      margin: 2rem 0 1rem;
+      margin-top: auto;
+      padding-bottom: 1.5rem;
     }
 
     .home-btn {
@@ -148,42 +159,41 @@
       text-align: center;
       font-size: 0.8rem;
       color: #aaa;
-      margin: 1rem 0;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>📖 เรียนคำศัพท์</header>
 
-  <header>📖 เรียนคำศัพท์</header>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
+    </div>
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
+    <div class="filter">
+      <label for="az">กรอง A-Z: </label>
+      <select id="az" onchange="filterAZ()">
+        <option value="">ทั้งหมด</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+    </div>
+
+    <div class="cards" id="cardContainer">
+      <!-- การ์ดจาก CSV จะมาปรากฏที่นี่ -->
+    </div>
+
+    <div class="home-container">
+      <button class="home-btn" onclick="window.location.href='index.html'">
+        🏠 กลับหน้าแรก
+      </button>
+    </div>
+
+    <footer>© 2025 Creme E-Learning</footer>
   </div>
-
-  <div class="filter">
-    <label for="az">กรอง A-Z: </label>
-    <select id="az" onchange="filterAZ()">
-      <option value="">ทั้งหมด</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-      <!-- เพิ่มตามต้องการ -->
-    </select>
-  </div>
-
-  <div class="cards" id="cardContainer">
-    <!-- การ์ดจะถูกสร้างจาก CSV -->
-  </div>
-
-  <!-- ปุ่มโฮมล่างสุด -->
-  <div class="home-container">
-    <button class="home-btn" onclick="window.location.href='index.html'">
-      🏠 กลับหน้าแรก
-    </button>
-  </div>
-
-  <footer>© 2025 Creme E-Learning</footer>
 
   <script>
     function filterBySearch() {
@@ -228,6 +238,5 @@
       });
     }
   </script>
-
 </body>
 </html>
