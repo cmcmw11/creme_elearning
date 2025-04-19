@@ -3,83 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>เข้าสู่ระบบ - Creme E-Learning</title>
+  <title>Login - Creme E-Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #fffafc;
-      text-align: center;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .login-container {
-      width: 300px;
-      margin: 100px auto;
-      background: #ffebf2;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      box-sizing: border-box;
     }
 
-    .input-field {
+    header {
+      font-size: 1.8rem;
+      color: #ff4d6d;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+
+    .input-container {
+      margin-bottom: 1.2rem;
+    }
+
+    input {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ffb6c1;
+      padding: 0.8rem;
       font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-top: 0.3rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #ff4d6d;
+      outline: none;
     }
 
     .login-btn {
       width: 100%;
-      padding: 10px;
+      padding: 1rem;
       background-color: #ff4d6d;
       color: white;
+      font-size: 1.1rem;
       border: none;
-      border-radius: 5px;
-      font-size: 1.2rem;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .login-btn:hover {
-      background-color: #ff3366;
+      background-color: #ff99b2;
     }
 
     .error-msg {
-      color: red;
-      font-size: 0.9rem;
-      margin-top: 10px;
+      margin-top: 1rem;
+      color: #ff4d6d;
+      font-size: 1rem;
     }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+
   </style>
 </head>
 <body>
-
   <div class="login-container">
-    <h2>เข้าสู่ระบบ</h2>
-    <input type="text" id="username" class="input-field" placeholder="ชื่อผู้ใช้" />
-    <input type="password" id="password" class="input-field" placeholder="รหัสผ่าน" />
+    <header>เข้าสู่ระบบ</header>
+    <div class="input-container">
+      <input type="text" id="username" placeholder="ชื่อผู้ใช้" />
+    </div>
+    <div class="input-container">
+      <input type="password" id="password" placeholder="รหัสผ่าน" />
+    </div>
     <button class="login-btn" onclick="login()">เข้าสู่ระบบ</button>
-    <p class="error-msg" id="error-msg"></p>
+    <div class="error-msg" id="error-msg"></div>
   </div>
 
   <script>
-   function login() {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const errorMsg = document.getElementById('error-msg');
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('error-msg');
 
-  const correctUsername = 'Abc';
-  const correctPassword = '1234';
+      const correctUsername = 'Abc';
+      const correctPassword = '1234';
 
-  if (username === correctUsername && password === correctPassword) {
-    // เมื่อล็อกอินสำเร็จ เก็บข้อมูลใน sessionStorage
-    sessionStorage.setItem('loggedIn', 'true');
-    window.location.href = 'vocab.html'; // เมื่อสำเร็จให้ไปหน้า vocab.html
-  } else {
-    errorMsg.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
-  }
-}
-
+      if (username === correctUsername && password === correctPassword) {
+        sessionStorage.setItem('loggedIn', 'true');
+        window.location.href = 'vocab.html';
+      } else {
+        errorMsg.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+      }
+    }
   </script>
-
 </body>
 </html>
+
