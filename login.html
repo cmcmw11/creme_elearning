@@ -62,26 +62,23 @@
   </div>
 
   <script>
-    // ฟังก์ชันล็อกอิน
-    function login() {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const errorMsg = document.getElementById('error-msg');
+   function login() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const errorMsg = document.getElementById('error-msg');
 
-      // ข้อมูลที่ต้องการให้ตรง
-      const correctUsername = 'Abc';
-      const correctPassword = '1234';
+  const correctUsername = 'Abc';
+  const correctPassword = '1234';
 
-      // ตรวจสอบข้อมูลที่กรอก
-      if (username === correctUsername && password === correctPassword) {
-        // เก็บข้อมูลผู้ใช้ที่ล็อกอินแล้วใน sessionStorage
-        sessionStorage.setItem('loggedIn', 'true');
-        window.location.href = 'vocab.html'; // เมื่อสำเร็จให้ไปหน้า vocab.html
-      } else {
-        // แสดงข้อความผิดพลาด
-        errorMsg.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
-      }
-    }
+  if (username === correctUsername && password === correctPassword) {
+    // เมื่อล็อกอินสำเร็จ เก็บข้อมูลใน sessionStorage
+    sessionStorage.setItem('loggedIn', 'true');
+    window.location.href = 'vocab.html'; // เมื่อสำเร็จให้ไปหน้า vocab.html
+  } else {
+    errorMsg.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+  }
+}
+
   </script>
 
 </body>
