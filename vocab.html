@@ -182,9 +182,10 @@
       </select>
     </div>
 
-    <div class="cards" id="cardContainer">
-      <!-- การ์ดจาก CSV จะมาปรากฏที่นี่ -->
-    </div>
+   <div class="cards" id="cardContainer">
+  <!-- การ์ดจาก CSV จะถูกเพิ่มที่นี่ -->
+</div>
+
 
     <div class="home-container">
       <button class="home-btn" onclick="window.location.href='index.html'">
@@ -238,5 +239,93 @@
       });
     }
   </script>
+  <script>
+  function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function filterBySearch() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = Array.from(document.querySelectorAll('.card'));
+
+    if (!input) {
+      cards.forEach(card => card.style.display = 'block');
+      return;
+    }
+
+    let found = false;
+
+    cards.forEach((card, index) => {
+      const word = (card.dataset.word || '').toLowerCase();
+      if (!found && word.startsWith(input)) {
+        found = true;
+        for (let i = 0; i < cards.length; i++) {
+          cards[i].style.display = (i >= index) ? 'block' : 'none';
+        }
+
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          card.style.border = '3px dashed hotpink';
+          setTimeout(() => card.style.border = '2px solid #ffd6de', 1500);
+        }, 100);
+      }
+    });
+
+    if (!found) {
+      cards.forEach(card => card.style.display = 'none');
+    }
+  }
+
+  function filterAZ() {
+    const selected = document.getElementById('az').value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const word = card.dataset.word.toLowerCase();
+      card.style.display = selected === "" || word.startsWith(selected) ? 'block' : 'none';
+    });
+  }
+
+  function loadCSVData() {
+    fetch('vocabulary.csv')
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.trim().split('\n');
+        const container = document.getElementById('cardContainer');
+        lines.shift(); // เอาหัวตารางออก
+
+        lines.forEach(line => {
+          const [word, translation, pos, sentence, sentenceTranslation] = line.split(',');
+
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.dataset.word = word;
+
+          card.innerHTML = `
+            <div class="word">${word}</div>
+            <div class="type">${pos}</div>
+            <div class="meaning">${translation}</div>
+            <div class="example">${sentence}<br><span style="color:#999">${sentenceTranslation}</span></div>
+            <div class="sound">
+              <button onclick="speak('${word}')">🔊 คำศัพท์</button>
+              <button onclick="speak('${sentence}')">🔈 ประโยค</button>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error('ไม่สามารถโหลด CSV:', err);
+        document.getElementById('cardContainer').innerHTML = '<p style="color:red;">ไม่พบไฟล์ vocabulary.csv</p>';
+      });
+  }
+
+  // โหลด CSV ตอนเปิดหน้า
+  window.onload = loadCSVData;
+</script>
+
 </body>
 </html>
