@@ -187,7 +187,7 @@
     <button class="home-btn" onclick="goToNextCard()">🔜 ถัดไป</button>
   </div>
 
-  <footer>© 2025 Creme E-Learning</footer>
+  
 
   <script>
     let currentCardIndex = 0;
@@ -254,17 +254,17 @@
   </script>
   <script>
     // ฟังก์ชันตรวจสอบว่าเข้าสู่ระบบแล้วหรือยัง
-    function checkLoginStatus() {
-      const loggedIn = sessionStorage.getItem('loggedIn');
-      if (!loggedIn) {
-        window.location.href = 'login.html'; // ถ้ายังไม่ได้ล็อกอินให้กลับไปหน้า login.html
-      }
-    }
+   function checkLoginStatus() {
+  // ตรวจสอบว่า loggedIn มีค่าหรือไม่
+  const loggedIn = sessionStorage.getItem('loggedIn');
+  if (!loggedIn) {
+    window.location.href = 'login.html'; // ถ้าไม่ได้ล็อกอินจะกลับไปหน้า login.html
+  }
+}
 
-    // เรียกใช้ฟังก์ชันตรวจสอบการล็อกอินเมื่อโหลดหน้า vocab.html
-    window.onload = checkLoginStatus;
+// เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
+window.onload = checkLoginStatus;
 
-    // ฟังก์ชันที่เหลือสำหรับการสร้างการ์ดจาก CSV และอื่น ๆ
   </script>
 
 </body>
