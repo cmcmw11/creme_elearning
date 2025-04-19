@@ -131,6 +131,32 @@
       font-size: 1.5rem;
     }
   </style>
+    <style>
+    /* เพิ่มเข้าไปในส่วน <style> เดิม */
+
+    .home-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .home-btn {
+      background-color: #ffb6c1;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+      transition: background 0.3s;
+    }
+
+    .home-btn:hover {
+      background-color: #ff99b2;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -155,6 +181,12 @@
 
   <div class="cards" id="cardContainer">
     <!-- การ์ดจะถูกสร้างจาก CSV -->
+  </div>
+  <!-- ปุ่มโฮมอยู่ล่างกลาง -->
+  <div class="home-container">
+    <button class="home-btn" onclick="window.location.href='index.html'">
+      🏠 กลับหน้าแรก
+    </button>
   </div>
 
   <footer>© 2025 Creme E-Learning</footer>
