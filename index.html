@@ -130,16 +130,22 @@
     © 2025 Creme E-Learning | Made with 💖
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('sideMenu');
-      menu.classList.toggle('open');
-    }
+ <script>
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    menu.classList.toggle('open');
+  }
 
-    function logout() {
-      alert("ออกจากระบบแล้ว");
-    }
-  </script>
+  function logout() {
+    // เคลียร์การเข้าสู่ระบบ
+    localStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("loggedIn");
+
+    // เด้งไปหน้า login
+    window.location.href = "login.html";
+  }
+</script>
+
    <script>
     if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
       window.location.href = "login.html";
