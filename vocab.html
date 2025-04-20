@@ -158,6 +158,8 @@
     }
 
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
 </head>
 <body>
   <div class="container">
@@ -311,34 +313,43 @@
     });
   }
 
-  function loadCSVData() {
-    fetch('vocabulary.csv')
-      .then(response => response.text())
-      .then(text => {
-        const lines = text.trim().split('\n');
-        const container = document.getElementById('cardContainer');
-        lines.shift(); // เอาหัวตารางออก
+ function loadCSVData() {
+  fetch('vocabulary.csv')
+    .then(response => response.text())
+    .then(csv => {
+      const result = Papa.parse(csv, {
+        header: true,
+        skipEmptyLines: true
+      });
 
-        lines.forEach(line => {
-          const [word, translation, pos, sentence, sentenceTranslation] = line.split(',');
+      const container = document.getElementById('cardContainer');
+      result.data.forEach(row => {
+        const { word, translation, pos, sentence, sentenceTranslation } = row;
 
-          const card = document.createElement('div');
-          card.className = 'card';
-          card.dataset.word = word;
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.word = word;
 
-          card.innerHTML = `
-            <div class="word">${word}</div>
-            <div class="type">${pos}</div>
-            <div class="meaning">${translation}</div>
-            <div class="example">${sentence}<br><span style="color:#999">${sentenceTranslation}</span></div>
-            <div class="sound">
-              <button onclick="speak('${word}')">🔊 คำศัพท์</button>
-              <button onclick="speak('${sentence}')">🔈 ประโยค</button>
-            </div>
-          `;
+        card.innerHTML = `
+          <div class="word">${word}</div>
+          <div class="type">${pos}</div>
+          <div class="meaning">${translation}</div>
+          <div class="example">${sentence}<br><span style="color:#999">${sentenceTranslation}</span></div>
+          <div class="sound">
+            <button onclick="speak('${word}')">🔊 คำศัพท์</button>
+            <button onclick="speak('${sentence}')">🔈 ประโยค</button>
+          </div>
+        `;
 
-          container.appendChild(card);
-        });
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error('ไม่สามารถโหลด CSV:', err);
+      document.getElementById('cardContainer').innerHTML = '<p style="color:red;">ไม่พบไฟล์ vocabulary.csv</p>';
+    });
+}
+
       })
       .catch(err => {
         console.error('ไม่สามารถโหลด CSV:', err);
