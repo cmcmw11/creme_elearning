@@ -1,22 +1,104 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>Fill in the Blanks - ชุดคำศัพท์</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fill in the Blanks - เลือกชุด</title>
+ <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+       font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+      padding: 2rem 1.5rem;
+      max-width: 430px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .menu a {
+      display: inline-block;
+      padding: 0.7rem 1.3rem;
+      background-color: #ffc2d1;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+      box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+    }
+
+    .menu a:hover {
+      background-color: #ff99b2;
+    }
+
+    .home {
+      margin-top: 2rem;
+    }
+
+    .home a {
+      background: #ffb6c1;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    }
+
+    .home a:hover {
+      background-color: #ff7a95;
+    }
+  </style>
 </head>
 <body>
-  <h1>📝 แบบฝึกหัด Fill in the Blanks</h1>
-  <ul>
-    <li><a href="fill-in-the-blanks-set1.html">ชุดที่ 1</a></li>
-    <li><a href="fill-in-the-blanks-set2.html">ชุดที่ 2</a></li>
-    <li><a href="fill-in-the-blanks-set3.html">ชุดที่ 3</a></li>
-    <li><a href="fill-in-the-blanks-set4.html">ชุดที่ 4</a></li>
-    <li><a href="fill-in-the-blanks-set5.html">ชุดที่ 5</a></li>
-    <li><a href="fill-in-the-blanks-set6.html">ชุดที่ 6</a></li>
-    <li><a href="fill-in-the-blanks-set7.html">ชุดที่ 7</a></li>
-    <li><a href="fill-in-the-blanks-set8.html">ชุดที่ 8</a></li>
-    <li><a href="fill-in-the-blanks-set9.html">ชุดที่ 9</a></li>
-    <li><a href="fill-in-the-blanks-set10.html">ชุดที่ 10</a></li>
-  </ul>
+  <div class="container">
+    <h1>📝 แบบฝึกหัดเติมคำ - เลือกชุด</h1>
+    <div class="menu">
+      <a href="fill-in-the-blanks-set1.html">ชุดที่ 1</a>
+      <a href="fill-in-the-blanks-set2.html">ชุดที่ 2</a>
+      <a href="fill-in-the-blanks-set3.html">ชุดที่ 3</a>
+      <a href="fill-in-the-blanks-set4.html">ชุดที่ 4</a>
+      <a href="fill-in-the-blanks-set5.html">ชุดที่ 5</a>
+      <a href="fill-in-the-blanks-set6.html">ชุดที่ 6</a>
+      <a href="fill-in-the-blanks-set7.html">ชุดที่ 7</a>
+      <a href="fill-in-the-blanks-set8.html">ชุดที่ 8</a>
+      <a href="fill-in-the-blanks-set9.html">ชุดที่ 9</a>
+      <a href="fill-in-the-blanks-set10.html">ชุดที่ 10</a>
+    </div>
+    <div class="home">
+      <a href="index.html">🏠 กลับหน้าแรก</a>
+    </div>
+  </div>
 </body>
 </html>
