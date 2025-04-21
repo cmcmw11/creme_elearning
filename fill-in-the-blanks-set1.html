@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบฝึกหัดเติมคำ - ชุดที่ 1.1</title>
+   <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+       font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .score-box {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 1rem;
+      background-color: #ffe2e6;
+      padding: 0.6rem 1rem;
+      border-radius: 15px;
+      font-weight: bold;
+      color: #d6336c;
+    }
+
+    .exercise {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    select {
+      padding: 0.4rem;
+      width: auto;
+      border-radius: 10px;
+      border: 1px solid #ff4d6d;
+      font-size: 1rem;
+      margin: 0 0.3rem;
+    }
+
+    .button-container {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .button-container button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button-container button:hover {
+      background-color: #ff7a95;
+    }
+
+    .home {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .home a {
+      background: #ffb6c1;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    }
+
+    .home a:hover {
+      background-color: #ff7a95;
+    }
+
+     .correct {
+    color: red;
+    font-weight: bold;
+  }
+  .hidden {
+    display: none;
+  }
+.answers {
+  display: none;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="score-box" id="score">คะแนน: 0/30</div>
+
+    <h1>📝 แบบฝึกหัดเติมคำ - ชุดที่ 1</h1>
+
+    <!-- 1 -->
+    <div class="exercise">
+      <p>1.1 I will 
+        <select id="answer1">
+          <option value="">เลือกคำตอบ</option>
+          <option value="abide">abide</option>
+          <option value="accomplish">accomplish</option>
+          <option value="address">address</option>
+          <option value="analyze">analyze</option>
+        </select>
+        by the rules and regulations of the organization.
+      </p>
+    </div>
+
+    <!-- 2 -->
+    <div class="exercise">
+      <p>1.2 She likes to 
+        <select id="answer2">
+          <option value="">เลือกคำตอบ</option>
+          <option value="accessorize">accessorize</option>
+          <option value="allocate">allocate</option>
+          <option value="amend">amend</option>
+          <option value="advertise">advertise</option>
+        </select>
+        her outfits with statement jewelry.
+      </p>
+    </div>
+
+    <!-- 3 -->
+    <div class="exercise">
+      <p>1.3 With determination, you can 
+        <select id="answer3">
+          <option value="">เลือกคำตอบ</option>
+          <option value="accomplish">accomplish</option>
+          <option value="allocate">allocate</option>
+          <option value="affirm">affirm</option>
+          <option value="adhere">adhere</option>
+        </select>
+        your goals.
+      </p>
+    </div>
+
+    <!-- 4 -->
+    <div class="exercise">
+      <p>1.4 It's essential to 
+        <select id="answer4">
+          <option value="">เลือกคำตอบ</option>
+          <option value="acknowledge">acknowledge</option>
+          <option value="address">address</option>
+          <option value="amend">amend</option>
+          <option value="apply">apply</option>
+        </select>
+        your mistakes and learn from them.
+      </p>
+    </div>
+<!-- 5 -->
+<div class="exercise">
+  <p>1.5 They had to 
+    <select id="answer5">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adjust">adjust</option>
+      <option value="abandon">abandon</option>
+      <option value="adopt">adopt</option>
+      <option value="absorb">absorb</option>
+    </select>
+    their old car.
+  </p>
+</div>
+
+<!-- 6 -->
+<div class="exercise">
+  <p>1.6 The rule is 
+    <select id="answer6">
+      <option value="">เลือกคำตอบ</option>
+      <option value="actual">actual</option>
+      <option value="absolute">absolute</option>
+      <option value="abstract">abstract</option>
+      <option value="accurate">accurate</option>
+    </select>
+    ; there are no exceptions.
+  </p>
+</div>
+
+<!-- 7 -->
+<div class="exercise">
+  <p>1.7 The sponge will 
+    <select id="answer7">
+      <option value="">เลือกคำตอบ</option>
+      <option value="acknowledge">acknowledge</option>
+      <option value="absorb">absorb</option>
+      <option value="accessorize">accessorize</option>
+      <option value="adapt">adapt</option>
+    </select>
+    the spilled water.
+  </p>
+</div>
+
+<!-- 8 -->
+<div class="exercise">
+  <p>1.8 The painting is 
+    <select id="answer8">
+      <option value="">เลือกคำตอบ</option>
+      <option value="abstract">abstract</option>
+      <option value="absolute">absolute</option>
+      <option value="academic">academic</option>
+      <option value="actual">actual</option>
+    </select>
+    , filled with vibrant colors.
+  </p>
+</div>
+
+<!-- 9 -->
+<div class="exercise">
+  <p>1.9 She pursued an 
+    <select id="answer9">
+      <option value="">เลือกคำตอบ</option>
+      <option value="academic">academic</option>
+      <option value="accurate">accurate</option>
+      <option value="adequate">adequate</option>
+      <option value="acidic">acidic</option>
+    </select>
+    career in science.
+  </p>
+</div>
+
+<!-- 10 -->
+<div class="exercise">
+  <p>1.10 Her 
+    <select id="answer10">
+      <option value="">เลือกคำตอบ</option>
+      <option value="accent">accent</option>
+      <option value="addiction">addiction</option>
+      <option value="account">account</option>
+      <option value="acquire">acquire</option>
+    </select>
+    revealed her European background.
+  </p>
+</div>
+
+<!-- 11 -->
+<div class="exercise">
+  <p>1.11 Your behavior is not 
+    <select id="answer11">
+      <option value="">เลือกคำตอบ</option>
+      <option value="acceptable">acceptable</option>
+      <option value="actual">actual</option>
+      <option value="abstract">abstract</option>
+      <option value="accurate">accurate</option>
+    </select>
+    in this class.
+  </p>
+</div>
+
+<!-- 12 -->
+<div class="exercise">
+  <p>1.12 I 
+    <select id="answer12">
+      <option value="">เลือกคำตอบ</option>
+      <option value="accurately">accurately</option>
+      <option value="adequately">adequately</option>
+      <option value="actively">actively</option>
+      <option value="accidentally">accidentally</option>
+    </select>
+    dropped my phone on the floor.
+  </p>
+</div>
+
+<!-- 13 -->
+<div class="exercise">
+  <p>1.13 The hotel can 
+    <select id="answer13">
+      <option value="">เลือกคำตอบ</option>
+      <option value="activate">activate</option>
+      <option value="accommodate">accommodate</option>
+      <option value="acknowledge">acknowledge</option>
+      <option value="accuse">accuse</option>
+    </select>
+    up to 200 guests.
+  </p>
+</div>
+
+<!-- 14 -->
+<div class="exercise">
+  <p>1.14 He will 
+    <select id="answer14">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adopt">adopt</option>
+      <option value="account">account</option>
+      <option value="abandon">abandon</option>
+      <option value="accompany">accompany</option>
+    </select>
+    you to the conference.
+  </p>
+</div>
+
+<!-- 15 -->
+<div class="exercise">
+  <p>1.15 The accountant managed the company's 
+    <select id="answer15">
+      <option value="">เลือกคำตอบ</option>
+      <option value="assets">assets</option>
+      <option value="accounts">accounts</option>
+      <option value="liabilities">liabilities</option>
+      <option value="finances">finances</option>
+    </select>
+    .
+  </p>
+</div>
+
+<!-- 16 -->
+<div class="exercise">
+  <p>1.16 Please provide an accurate 
+    <select id="answer16">
+      <option value="">เลือกคำตอบ</option>
+      <option value="account">account</option>
+      <option value="adjustment">adjustment</option>
+      <option value="accent">accent</option>
+      <option value="action">action</option>
+    </select>
+    of the incident.
+  </p>
+</div>
+
+<!-- 17 -->
+<div class="exercise">
+  <p>1.17 They 
+    <select id="answer17">
+      <option value="">เลือกคำตอบ</option>
+      <option value="accuse">accuse</option>
+      <option value="acquire">acquire</option>
+      <option value="adapt">adapt</option>
+      <option value="accomplish">accomplish</option>
+    </select>
+    him of stealing the money.
+  </p>
+</div>
+
+<!-- 18 -->
+<div class="exercise">
+  <p>1.18 Be careful; that substance is highly 
+    <select id="answer18">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adequate">adequate</option>
+      <option value="acidic">acidic</option>
+      <option value="abstract">abstract</option>
+      <option value="actual">actual</option>
+    </select>
+    .
+  </p>
+</div>
+
+<!-- 19 -->
+<div class="exercise">
+  <p>1.19 She will 
+    <select id="answer19">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adopt">adopt</option>
+      <option value="address">address</option>
+      <option value="acquire">acquire</option>
+      <option value="activate">activate</option>
+    </select>
+    new skills through training.
+  </p>
+</div>
+
+<!-- 20 -->
+<div class="exercise">
+  <p>1.20 You need to 
+    <select id="answer20">
+      <option value="">เลือกคำตอบ</option>
+      <option value="acquire">acquire</option>
+      <option value="activate">activate</option>
+      <option value="adapt">adapt</option>
+      <option value="amend">amend</option>
+    </select>
+    your membership online.
+  </p>
+</div>
+
+<!-- 21 -->
+<div class="exercise">
+  <p>1.21 The actual size of the book is 
+    <select id="answer21">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adequate">adequate</option>
+      <option value="larger">larger</option>
+      <option value="smaller">smaller</option>
+      <option value="abstract">abstract</option>
+    </select>
+    than I expected.
+  </p>
+</div>
+
+<!-- 22 -->
+<div class="exercise">
+  <p>1.22 The actual price of the item was 
+    <select id="answer22">
+      <option value="">เลือกคำตอบ</option>
+      <option value="absolute">absolute</option>
+      <option value="higher">higher</option>
+      <option value="lower">lower</option>
+      <option value="accurate">accurate</option>
+    </select>
+    than I thought.
+  </p>
+</div>
+
+<!-- 23 -->
+<div class="exercise">
+  <p>1.23 We need to 
+    <select id="answer23">
+      <option value="">เลือกคำตอบ</option>
+      <option value="acknowledge">acknowledge</option>
+      <option value="adapt">adapt</option>
+      <option value="accessorize">accessorize</option>
+      <option value="adopt">adopt</option>
+    </select>
+    to the changing circumstances.
+  </p>
+</div>
+
+<!-- 24 -->
+<div class="exercise">
+  <p>1.24 Overcoming 
+    <select id="answer24">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adoption">adoption</option>
+      <option value="addiction">addiction</option>
+      <option value="addition">addition</option>
+      <option value="advice">advice</option>
+    </select>
+    can be a challenging journey.
+  </p>
+</div>
+
+<!-- 25 -->
+<div class="exercise">
+  <p>1.25 We may need 
+    <select id="answer25">
+      <option value="">เลือกคำตอบ</option>
+      <option value="acceptable">acceptable</option>
+      <option value="additional">additional</option>
+      <option value="actual">actual</option>
+      <option value="abstract">abstract</option>
+    </select>
+    information to complete the task.
+  </p>
+</div>
+
+<!-- 26 -->
+<div class="exercise">
+  <p>1.26 
+    <select id="answer26">
+      <option value="">เลือกคำตอบ</option>
+      <option value="However">However</option>
+      <option value="Additionally">Additionally</option>
+      <option value="Finally">Finally</option>
+      <option value="Therefore">Therefore</option>
+    </select>
+    , we can discuss other options.
+  </p>
+</div>
+
+<!-- 27 -->
+<div class="exercise">
+  <p>1.27 Please provide your current 
+    <select id="answer27">
+      <option value="">เลือกคำตอบ</option>
+      <option value="accent">accent</option>
+      <option value="action">action</option>
+      <option value="address">address</option>
+      <option value="account">account</option>
+    </select>
+    .
+  </p>
+</div>
+
+<!-- 28 -->
+<div class="exercise">
+  <p>1.28 Is your budget 
+    <select id="answer28">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adequate">adequate</option>
+      <option value="abstract">abstract</option>
+      <option value="additional">additional</option>
+      <option value="actual">actual</option>
+    </select>
+    for this project?
+  </p>
+</div>
+
+<!-- 29 -->
+<div class="exercise">
+  <p>1.29 She handled the situation 
+    <select id="answer29">
+      <option value="">เลือกคำตอบ</option>
+      <option value="actively">actively</option>
+      <option value="accurately">accurately</option>
+      <option value="adequately">adequately</option>
+      <option value="accidentally">accidentally</option>
+    </select>
+    .
+  </p>
+</div>
+
+<!-- 30 -->
+<div class="exercise">
+  <p>1.30 We can 
+    <select id="answer30">
+      <option value="">เลือกคำตอบ</option>
+      <option value="adopt">adopt</option>
+      <option value="acknowledge">acknowledge</option>
+      <option value="adjust">adjust</option>
+      <option value="amend">amend</option>
+    </select>
+    the settings to improve performance.
+  </p>
+</div>
+
+
+
+    <div class="button-container">
+      <button onclick="checkAnswers()">ตรวจคำตอบ</button>
+    </div>
+
+   <div class="answers" id="answers">
+  <h3>เฉลย:</h3>
+  <p>1.1 I will <span class="correct">abide</span> by the rules and regulations of the organization.</p>
+  <p>1.2 She likes to <span class="correct">accessorize</span> her outfits with statement jewelry.</p>
+  <p>1.3 With determination, you can <span class="correct">accomplish</span> your goals.</p>
+  <p>1.4 It's essential to <span class="correct">acknowledge</span> your mistakes and learn from them.</p>
+  <p>1.5 They had to <span class="correct">abandon</span> their old car.</p>
+  <p>1.6 The rule is <span class="correct">absolute</span>; there are no exceptions.</p>
+  <p>1.7 The sponge will <span class="correct">absorb</span> the spilled water.</p>
+  <p>1.8 The painting is <span class="correct">abstract</span>, filled with vibrant colors.</p>
+  <p>1.9 She pursued an <span class="correct">academic</span> career in science.</p>
+  <p>1.10 Her <span class="correct">accent</span> revealed her European background.</p>
+  <p>1.11 Your behavior is not <span class="correct">acceptable</span> in this class.</p>
+  <p>1.12 I <span class="correct">accidentally</span> dropped my phone on the floor.</p>
+  <p>1.13 The hotel can <span class="correct">accommodate</span> up to 200 guests.</p>
+  <p>1.14 He will <span class="correct">accompany</span> you to the conference.</p>
+  <p>1.15 We must <span class="correct">accomplish</span> our goals before the deadline.</p>
+  <p>1.16 The <span class="correct">accountant</span> managed the company's finances.</p>
+  <p>1.17 Please provide an accurate <span class="correct">account</span> of the incident.</p>
+  <p>1.18 They <span class="correct">accuse</span> him of stealing the money.</p>
+  <p>1.19 Be careful; that substance is highly <span class="correct">acidic</span>.</p>
+  <p>1.20 He didn't <span class="correct">acknowledge</span> my presence in the room.</p>
+  <p>1.21 The actual size of the book is <span class="correct">larger</span> than I expected.</p>
+  <p>1.22 The actual price of the item was <span class="correct">lower</span> than I thought.</p>
+  <p>1.23 We need to <span class="correct">adapt</span> to the changing circumstances.</p>
+  <p>1.24 Overcoming <span class="correct">addiction</span> can be a challenging journey.</p>
+  <p>1.25 We may need <span class="correct">additional</span> information to complete the task.</p>
+  <p>1.26 <span class="correct">Additionally</span>, we can discuss other options.</p>
+  <p>1.27 Please provide your current <span class="correct">address</span>.</p>
+  <p>1.28 Is your budget <span class="correct">adequate</span> for this project?</p>
+  <p>1.29 She handled the situation <span class="correct">adequately</span>.</p>
+  <p>1.30 We can <span class="correct">adjust</span> the settings to improve performance.</p>
+</div>
+
+
+    <div class="home">
+      <a href="index.html">🏠 กลับหน้าแรก</a>
+    </div>
+  </div>
+<script>
+  function checkAnswers() {
+  // คำตอบที่ถูกต้อง
+  const correctAnswers = {
+    answer1: 'abide',
+    answer2: 'accessorize',
+    answer3: 'accomplish',
+    answer4: 'acknowledge',
+    answer5: 'abandon',
+    answer6: 'absolute',
+    answer7: 'absorb',
+    answer8: 'abstract',
+    answer9: 'academic',
+    answer10: 'accent',
+    answer11: 'acceptable',
+    answer12: 'accidentally',
+    answer13: 'accommodate',
+    answer14: 'accompany',
+    answer15: 'accomplish',
+    answer16: 'account',
+    answer17: 'accuse',
+    answer18: 'acidic',
+    answer19: 'acknowledge',
+    answer20: 'adjust',
+    answer21: 'larger',
+    answer22: 'lower',
+    answer23: 'adapt',
+    answer24: 'addiction',
+    answer25: 'additional',
+    answer26: 'Additionally',
+    answer27: 'address',
+    answer28: 'adequate',
+    answer29: 'adequately',
+    answer30: 'adjust'
+  };
+
+  let score = 0;
+  for (let i = 1; i <= 30; i++) {
+    const answer = document.getElementById(`answer${i}`).value;
+    if (answer === correctAnswers[`answer${i}`]) {
+      score++;
+    }
+  }
+
+  // แสดงคะแนน
+  document.getElementById("score").textContent = `คะแนน: ${score}/30`;
+
+  // แสดงเฉลย
+  document.getElementById("answers").style.display = 'block';
+}
+
+
+  </script>
+</body>
+</html>
