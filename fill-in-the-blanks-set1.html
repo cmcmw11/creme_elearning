@@ -1,735 +1,473 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>แบบฝึกหัดเติมคำ - ชุดที่ 1.1</title>
-   <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <title>แบบฝึกหัดรวม</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-       font-family: 'Sarabun', sans-serif;
+      font-family: 'Sarabun', sans-serif;
       background: #fffafc;
       color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 2rem;
     }
-
     .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
-      padding: 2rem;
-      max-width: 800px;
-      width: 100%;
-      position: relative;
     }
-
     h1 {
+      text-align: center;
       color: #ff4d6d;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      text-align: left;
     }
-
-    .score-box {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 1rem;
-      background-color: #ffe2e6;
-      padding: 0.6rem 1rem;
-      border-radius: 15px;
-      font-weight: bold;
-      color: #d6336c;
+    .question-box {
+      display: none;
     }
-
-    .exercise {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      text-align: left;
+    .question-box.active {
+      display: block;
     }
-
-    select {
-      padding: 0.4rem;
-      width: auto;
+    .options {
+      margin-top: 1rem;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background: #ffe5ec;
       border-radius: 10px;
-      border: 1px solid #ff4d6d;
-      font-size: 1rem;
-      margin: 0 0.3rem;
-    }
-
-    .button-container {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .button-container button {
-      background-color: #ff4d6d;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1.2rem;
-      border-radius: 30px;
       cursor: pointer;
-      transition: background 0.3s;
     }
-
-    .button-container button:hover {
-      background-color: #ff7a95;
-    }
-
-    .home {
+    .navigation {
+      display: flex;
+      justify-content: space-between;
       margin-top: 2rem;
-      text-align: center;
     }
-
-    .home a {
+    button {
+      padding: 0.5rem 1rem;
       background: #ffb6c1;
-      padding: 0.6rem 1.2rem;
+      border: none;
       border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
       color: white;
+    }
+    button:hover {
+      background: #ff7a95;
+    }
+    .home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .home a {
       text-decoration: none;
-      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #ffc2d1;
+      color: white;
+      border-radius: 30px;
       font-weight: bold;
       box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
     }
-
-    .home a:hover {
-      background-color: #ff7a95;
+    .submit-container {
+      text-align: center;
+      margin-top: 2rem;
     }
-
-     .correct {
-    color: red;
-    font-weight: bold;
-  }
-  .hidden {
-    display: none;
-  }
-.answers {
-  display: none;
-}
-
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: left;
+      border: 2px solid #ff4d6d;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background-color: #ffe5ec;
+      width: 90%;
+      max-width: 500px;
+      margin: 1rem auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="score-box" id="score">คะแนน: 0/30</div>
+    <h1>🌸 แบบฝึกหัดที่ 2 ชุดที่ 1  🌸</h1>
+    <form id="quizForm">
+      <!-- Listening Fill-in-the-Blanks -->
+      
 
-    <h1>📝 แบบฝึกหัดเติมคำ - ชุดที่ 1</h1>
+    <!-- Add more questions for Listening Fill-in-the-Blanks -->
 
-    <!-- 1 -->
-    <div class="exercise">
-      <p>1.1 I will 
-        <select id="answer1">
-          <option value="">เลือกคำตอบ</option>
-          <option value="abide">abide</option>
-          <option value="accomplish">accomplish</option>
-          <option value="address">address</option>
-          <option value="analyze">analyze</option>
-        </select>
-        by the rules and regulations of the organization.
-      </p>
-    </div>
-
-    <!-- 2 -->
-    <div class="exercise">
-      <p>1.2 She likes to 
-        <select id="answer2">
-          <option value="">เลือกคำตอบ</option>
-          <option value="accessorize">accessorize</option>
-          <option value="allocate">allocate</option>
-          <option value="amend">amend</option>
-          <option value="advertise">advertise</option>
-        </select>
-        her outfits with statement jewelry.
-      </p>
-    </div>
-
-    <!-- 3 -->
-    <div class="exercise">
-      <p>1.3 With determination, you can 
-        <select id="answer3">
-          <option value="">เลือกคำตอบ</option>
-          <option value="accomplish">accomplish</option>
-          <option value="allocate">allocate</option>
-          <option value="affirm">affirm</option>
-          <option value="adhere">adhere</option>
-        </select>
-        your goals.
-      </p>
-    </div>
-
-    <!-- 4 -->
-    <div class="exercise">
-      <p>1.4 It's essential to 
-        <select id="answer4">
-          <option value="">เลือกคำตอบ</option>
-          <option value="acknowledge">acknowledge</option>
-          <option value="address">address</option>
-          <option value="amend">amend</option>
-          <option value="apply">apply</option>
-        </select>
-        your mistakes and learn from them.
-      </p>
-    </div>
-<!-- 5 -->
-<div class="exercise">
-  <p>1.5 They had to 
-    <select id="answer5">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adjust">adjust</option>
-      <option value="abandon">abandon</option>
-      <option value="adopt">adopt</option>
-      <option value="absorb">absorb</option>
-    </select>
-    their old car.
+<!-- 2.1 -->
+<div class="question-box active">
+  <p><strong>2.1 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_1" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> diet is essential for good health.
+  <button type="button" onclick="speakWord('A balanced diet is essential for good health.')">🔊</button>
   </p>
 </div>
 
-<!-- 6 -->
-<div class="exercise">
-  <p>1.6 The rule is 
-    <select id="answer6">
-      <option value="">เลือกคำตอบ</option>
-      <option value="actual">actual</option>
-      <option value="absolute">absolute</option>
-      <option value="abstract">abstract</option>
-      <option value="accurate">accurate</option>
-    </select>
-    ; there are no exceptions.
+<!-- 2.2 -->
+<div class="question-box">
+  <p><strong>2.2 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_2" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> wandered into the campsite.
+  <button type="button" onclick="speakWord('A bear wandered into the campsite.')">🔊</button>
   </p>
 </div>
 
-<!-- 7 -->
-<div class="exercise">
-  <p>1.7 The sponge will 
-    <select id="answer7">
-      <option value="">เลือกคำตอบ</option>
-      <option value="acknowledge">acknowledge</option>
-      <option value="absorb">absorb</option>
-      <option value="accessorize">accessorize</option>
-      <option value="adapt">adapt</option>
-    </select>
-    the spilled water.
+<!-- 2.3 -->
+<div class="question-box">
+  <p><strong>2.3 Listening Fill-in-the-Blanks:</strong><br>
+  Access to <input type="text" name="q2_3" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> is essential for all.
+  <button type="button" onclick="speakWord('Access to healthcare is essential for all.')">🔊</button>
   </p>
 </div>
 
-<!-- 8 -->
-<div class="exercise">
-  <p>1.8 The painting is 
-    <select id="answer8">
-      <option value="">เลือกคำตอบ</option>
-      <option value="abstract">abstract</option>
-      <option value="absolute">absolute</option>
-      <option value="academic">academic</option>
-      <option value="actual">actual</option>
-    </select>
-    , filled with vibrant colors.
+<!-- 2.4 -->
+<div class="question-box">
+  <p><strong>2.4 Listening Fill-in-the-Blanks:</strong><br>
+  A crack appeared in the wall after the <input type="text" name="q2_4" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" />.
+  <button type="button" onclick="speakWord('A crack appeared in the wall after the earthquake.')">🔊</button>
   </p>
 </div>
 
-<!-- 9 -->
-<div class="exercise">
-  <p>1.9 She pursued an 
-    <select id="answer9">
-      <option value="">เลือกคำตอบ</option>
-      <option value="academic">academic</option>
-      <option value="accurate">accurate</option>
-      <option value="adequate">adequate</option>
-      <option value="acidic">acidic</option>
-    </select>
-    career in science.
+<!-- 2.5 -->
+<div class="question-box">
+  <p><strong>2.5 Listening Fill-in-the-Blanks:</strong><br>
+  A cup of coffee can give you a quick energy <input type="text" name="q2_5" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" />.
+  <button type="button" onclick="speakWord('A cup of coffee can give you a quick energy boost.')">🔊</button>
   </p>
 </div>
 
-<!-- 10 -->
-<div class="exercise">
-  <p>1.10 Her 
-    <select id="answer10">
-      <option value="">เลือกคำตอบ</option>
-      <option value="accent">accent</option>
-      <option value="addiction">addiction</option>
-      <option value="account">account</option>
-      <option value="acquire">acquire</option>
-    </select>
-    revealed her European background.
+<!-- 2.6 -->
+<div class="question-box">
+  <p><strong>2.6 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_6" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> , we can discuss other options.
+  <button type="button" onclick="speakWord('Additionally, we can discuss other options.')">🔊</button>
   </p>
 </div>
 
-<!-- 11 -->
-<div class="exercise">
-  <p>1.11 Your behavior is not 
-    <select id="answer11">
-      <option value="">เลือกคำตอบ</option>
-      <option value="acceptable">acceptable</option>
-      <option value="actual">actual</option>
-      <option value="abstract">abstract</option>
-      <option value="accurate">accurate</option>
-    </select>
-    in this class.
+<!-- 2.7 -->
+<div class="question-box">
+  <p><strong>2.7 Listening Fill-in-the-Blanks:</strong><br>
+  Add some <input type="text" name="q2_7" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> to the dish.
+  <button type="button" onclick="speakWord('Add some spice to the dish.')">🔊</button>
   </p>
 </div>
 
-<!-- 12 -->
-<div class="exercise">
-  <p>1.12 I 
-    <select id="answer12">
-      <option value="">เลือกคำตอบ</option>
-      <option value="accurately">accurately</option>
-      <option value="adequately">adequately</option>
-      <option value="actively">actively</option>
-      <option value="accidentally">accidentally</option>
-    </select>
-    dropped my phone on the floor.
+<!-- 2.8 -->
+<div class="question-box">
+  <p><strong>2.8 Listening Fill-in-the-Blanks:</strong><br>
+  Add up the numbers to get the <input type="text" name="q2_8" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" />.
+  <button type="button" onclick="speakWord('Add up the numbers to get the sum.')">🔊</button>
   </p>
 </div>
 
-<!-- 13 -->
-<div class="exercise">
-  <p>1.13 The hotel can 
-    <select id="answer13">
-      <option value="">เลือกคำตอบ</option>
-      <option value="activate">activate</option>
-      <option value="accommodate">accommodate</option>
-      <option value="acknowledge">acknowledge</option>
-      <option value="accuse">accuse</option>
-    </select>
-    up to 200 guests.
+<!-- 2.9 -->
+<div class="question-box">
+  <p><strong>2.9 Listening Fill-in-the-Blanks:</strong><br>
+  Affordable <input type="text" name="q2_9" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> is a critical issue.
+  <button type="button" onclick="speakWord('Affordable housing is a critical issue.')">🔊</button>
   </p>
 </div>
 
-<!-- 14 -->
-<div class="exercise">
-  <p>1.14 He will 
-    <select id="answer14">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adopt">adopt</option>
-      <option value="account">account</option>
-      <option value="abandon">abandon</option>
-      <option value="accompany">accompany</option>
-    </select>
-    you to the conference.
+<!-- 2.10 -->
+<div class="question-box">
+  <p><strong>2.10 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_10" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> is a vital industry in this region.
+  <button type="button" onclick="speakWord('Agriculture is a vital industry in this region.')">🔊</button>
   </p>
 </div>
 
-<!-- 15 -->
-<div class="exercise">
-  <p>1.15 The accountant managed the company's 
-    <select id="answer15">
-      <option value="">เลือกคำตอบ</option>
-      <option value="assets">assets</option>
-      <option value="accounts">accounts</option>
-      <option value="liabilities">liabilities</option>
-      <option value="finances">finances</option>
-    </select>
-    .
+<!-- 2.11 -->
+<div class="question-box">
+  <p><strong>2.11 Listening Fill-in-the-Blanks:</strong><br>
+  A high <input type="text" name="q2_11" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> can be a sign of illness.
+  <button type="button" onclick="speakWord('A high fever can be a sign of illness.')">🔊</button>
   </p>
 </div>
 
-<!-- 16 -->
-<div class="exercise">
-  <p>1.16 Please provide an accurate 
-    <select id="answer16">
-      <option value="">เลือกคำตอบ</option>
-      <option value="account">account</option>
-      <option value="adjustment">adjustment</option>
-      <option value="accent">accent</option>
-      <option value="action">action</option>
-    </select>
-    of the incident.
+<!-- 2.12 -->
+<div class="question-box">
+  <p><strong>2.12 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_12" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> is a serious health condition.
+  <button type="button" onclick="speakWord('AIDS is a serious health condition.')">🔊</button>
   </p>
 </div>
 
-<!-- 17 -->
-<div class="exercise">
-  <p>1.17 They 
-    <select id="answer17">
-      <option value="">เลือกคำตอบ</option>
-      <option value="accuse">accuse</option>
-      <option value="acquire">acquire</option>
-      <option value="adapt">adapt</option>
-      <option value="accomplish">accomplish</option>
-    </select>
-    him of stealing the money.
+<!-- 2.13 -->
+<div class="question-box">
+  <p><strong>2.13 Listening Fill-in-the-Blanks:</strong><br>
+  All employees are <input type="text" name="q2_13" style="border: none; border-bottom: 2px solid #ffb6c1; width: 50px;" /> in the company.
+  <button type="button" onclick="speakWord('All employees are equal in the company.')">🔊</button>
   </p>
 </div>
 
-<!-- 18 -->
-<div class="exercise">
-  <p>1.18 Be careful; that substance is highly 
-    <select id="answer18">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adequate">adequate</option>
-      <option value="acidic">acidic</option>
-      <option value="abstract">abstract</option>
-      <option value="actual">actual</option>
-    </select>
-    .
+<!-- 2.14 -->
+<div class="question-box">
+  <p><strong>2.14 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_14" style="border: none; border-bottom: 2px solid #ffb6c1; width: 50px;" /> of people gathered for the event.
+  <button type="button" onclick="speakWord('A mass of people gathered for the event.')">🔊</button>
   </p>
 </div>
 
-<!-- 19 -->
-<div class="exercise">
-  <p>1.19 She will 
-    <select id="answer19">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adopt">adopt</option>
-      <option value="address">address</option>
-      <option value="acquire">acquire</option>
-      <option value="activate">activate</option>
-    </select>
-    new skills through training.
+<!-- 2.15 -->
+<div class="question-box">
+  <p><strong>2.15 Listening Fill-in-the-Blanks:</strong><br>
+  A moment of <input type="text" name="q2_15" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> please. 
+  <button type="button" onclick="speakWord('A moment of silence, please.')">🔊</button>
   </p>
 </div>
 
-<!-- 20 -->
-<div class="exercise">
-  <p>1.20 You need to 
-    <select id="answer20">
-      <option value="">เลือกคำตอบ</option>
-      <option value="acquire">acquire</option>
-      <option value="activate">activate</option>
-      <option value="adapt">adapt</option>
-      <option value="amend">amend</option>
-    </select>
-    your membership online.
+<!-- 2.16 -->
+<div class="question-box">
+  <p><strong>2.16 Listening Fill-in-the-Blanks:</strong><br>
+  Ancient <input type="text" name="q2_16" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> left behind many mysteries.
+  <button type="button" onclick="speakWord('Ancient civilization left behind many mysteries.')">🔊</button>
   </p>
 </div>
 
-<!-- 21 -->
-<div class="exercise">
-  <p>1.21 The actual size of the book is 
-    <select id="answer21">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adequate">adequate</option>
-      <option value="larger">larger</option>
-      <option value="smaller">smaller</option>
-      <option value="abstract">abstract</option>
-    </select>
-    than I expected.
+<!-- 2.17 -->
+<div class="question-box">
+  <p><strong>2.17 Listening Fill-in-the-Blanks:</strong><br>
+  An electric <input type="text" name="q2_17" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> is dangerous.
+  <button type="button" onclick="speakWord('An electric shock is dangerous.')">🔊</button>
   </p>
 </div>
 
-<!-- 22 -->
-<div class="exercise">
-  <p>1.22 The actual price of the item was 
-    <select id="answer22">
-      <option value="">เลือกคำตอบ</option>
-      <option value="absolute">absolute</option>
-      <option value="higher">higher</option>
-      <option value="lower">lower</option>
-      <option value="accurate">accurate</option>
-    </select>
-    than I thought.
+<!-- 2.18 -->
+<div class="question-box">
+  <p><strong>2.18 Listening Fill-in-the-Blanks:</strong><br>
+  An <input type="text" name="q2_18" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> job is one you love.
+  <button type="button" onclick="speakWord('An ideal job is one you love.')">🔊</button>
   </p>
 </div>
 
-<!-- 23 -->
-<div class="exercise">
-  <p>1.23 We need to 
-    <select id="answer23">
-      <option value="">เลือกคำตอบ</option>
-      <option value="acknowledge">acknowledge</option>
-      <option value="adapt">adapt</option>
-      <option value="accessorize">accessorize</option>
-      <option value="adopt">adopt</option>
-    </select>
-    to the changing circumstances.
+<!-- 2.19 -->
+<div class="question-box">
+  <p><strong>2.19 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_19" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> can cause feelings of unease.
+  <button type="button" onclick="speakWord('Anxiety can cause feelings of unease.')">🔊</button>
   </p>
 </div>
 
-<!-- 24 -->
-<div class="exercise">
-  <p>1.24 Overcoming 
-    <select id="answer24">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adoption">adoption</option>
-      <option value="addiction">addiction</option>
-      <option value="addition">addition</option>
-      <option value="advice">advice</option>
-    </select>
-    can be a challenging journey.
+<!-- 2.20 -->
+<div class="question-box">
+  <p><strong>2.20 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_20" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> the store is closed on Sundays.
+  <button type="button" onclick="speakWord('Apparently, the store is closed on Sundays.')">🔊</button>
   </p>
 </div>
 
-<!-- 25 -->
-<div class="exercise">
-  <p>1.25 We may need 
-    <select id="answer25">
-      <option value="">เลือกคำตอบ</option>
-      <option value="acceptable">acceptable</option>
-      <option value="additional">additional</option>
-      <option value="actual">actual</option>
-      <option value="abstract">abstract</option>
-    </select>
-    information to complete the task.
+<!-- 2.21 -->
+<div class="question-box">
+  <p><strong>2.21 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_21" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> scurried across the floor.
+  <button type="button" onclick="speakWord('A rat scurried across the floor.')">🔊</button>
   </p>
 </div>
 
-<!-- 26 -->
-<div class="exercise">
-  <p>1.26 
-    <select id="answer26">
-      <option value="">เลือกคำตอบ</option>
-      <option value="However">However</option>
-      <option value="Additionally">Additionally</option>
-      <option value="Finally">Finally</option>
-      <option value="Therefore">Therefore</option>
-    </select>
-    , we can discuss other options.
+<!-- 2.22 -->
+<div class="question-box">
+  <p><strong>2.22 Listening Fill-in-the-Blanks:</strong><br>
+  Are you <input type="text" name="q2_22" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> of your actions?
+  <button type="button" onclick="speakWord('Are you conscious of your actions?')">🔊</button>
   </p>
 </div>
 
-<!-- 27 -->
-<div class="exercise">
-  <p>1.27 Please provide your current 
-    <select id="answer27">
-      <option value="">เลือกคำตอบ</option>
-      <option value="accent">accent</option>
-      <option value="action">action</option>
-      <option value="address">address</option>
-      <option value="account">account</option>
-    </select>
-    .
+<!-- 2.23 -->
+<div class="question-box">
+  <p><strong>2.23 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_23" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> intelligence is advancing rapidly.
+  <button type="button" onclick="speakWord('Artificial intelligence is advancing rapidly.')">🔊</button>
   </p>
 </div>
 
-<!-- 28 -->
-<div class="exercise">
-  <p>1.28 Is your budget 
-    <select id="answer28">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adequate">adequate</option>
-      <option value="abstract">abstract</option>
-      <option value="additional">additional</option>
-      <option value="actual">actual</option>
-    </select>
-    for this project?
+<!-- 2.24 -->
+<div class="question-box">
+  <p><strong>2.24 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_24" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> appeared on the wall.
+  <button type="button" onclick="speakWord('A shadow appeared on the wall.')">🔊</button>
   </p>
 </div>
 
-<!-- 29 -->
-<div class="exercise">
-  <p>1.29 She handled the situation 
-    <select id="answer29">
-      <option value="">เลือกคำตอบ</option>
-      <option value="actively">actively</option>
-      <option value="accurately">accurately</option>
-      <option value="adequately">adequately</option>
-      <option value="accidentally">accidentally</option>
-    </select>
-    .
+<!-- 2.25 -->
+<div class="question-box">
+  <p><strong>2.25 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_25" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> flows through the forest.
+  <button type="button" onclick="speakWord('A stream flows through the forest.')">🔊</button>
   </p>
 </div>
 
-<!-- 30 -->
-<div class="exercise">
-  <p>1.30 We can 
-    <select id="answer30">
-      <option value="">เลือกคำตอบ</option>
-      <option value="adopt">adopt</option>
-      <option value="acknowledge">acknowledge</option>
-      <option value="adjust">adjust</option>
-      <option value="amend">amend</option>
-    </select>
-    the settings to improve performance.
+<!-- 2.26 -->
+<div class="question-box">
+  <p><strong>2.26 Listening Fill-in-the-Blanks:</strong><br>
+  A <input type="text" name="q2_26" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> can be life-threatening.
+  <button type="button" onclick="speakWord('A stroke can be life-threatening.')">🔊</button>
+  </p>
+</div>
+
+<!-- 2.27 -->
+<div class="question-box">
+  <p><strong>2.27 Listening Fill-in-the-Blanks:</strong><br>
+  His <input type="text" name="q2_27" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> was unconvincing.
+  <button type="button" onclick="speakWord('His excuse was unconvincing.')">🔊</button>
+  </p>
+</div>
+
+<!-- 2.28 -->
+<div class="question-box">
+  <p><strong>2.28 Listening Fill-in-the-Blanks:</strong><br>
+  A feeling of <input type="text" name="q2_28" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> overtook him.
+  <button type="button" onclick="speakWord('A feeling of guilt overtook him.')">🔊</button>
+  </p>
+</div>
+
+<!-- 2.29 -->
+<div class="question-box">
+  <p><strong>2.29 Listening Fill-in-the-Blanks:</strong><br>
+  An <input type="text" name="q2_29" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> appeared over the city.
+  <button type="button" onclick="speakWord('An eclipse appeared over the city.')">🔊</button>
+  </p>
+</div>
+
+<!-- 2.30 -->
+<div class="question-box">
+  <p><strong>2.30 Listening Fill-in-the-Blanks:</strong><br>
+  An <input type="text" name="q2_30" style="border: none; border-bottom: 2px solid #ffb6c1; width: 150px;" /> is not always effective.
+  <button type="button" onclick="speakWord('An apology is not always effective.')">🔊</button>
   </p>
 </div>
 
 
 
-    <div class="button-container">
-      <button onclick="checkAnswers()">ตรวจคำตอบ</button>
-    </div>
-
-   <div class="answers" id="answers">
-  <h3>เฉลย:</h3>
- <!-- 1 -->
-<p>1.1 I will <span class="correct">abide</span> by the rules and regulations of the organization.</p>
-<p>ฉันจะปฏิบัติตามกฎและข้อบังคับขององค์กร</p>
-
-<!-- 2 -->
-<p>1.2 She will <span class="correct">adjust</span> her schedule to meet the new deadlines.</p>
-<p>เธอจะปรับตารางเวลาของเธอให้ตรงกับกำหนดเวลาที่ใหม่</p>
-
-<!-- 3 -->
-<p>1.3 The manager will <span class="correct">adopt</span> a new approach to improve team performance.</p>
-<p>ผู้จัดการจะนำวิธีการใหม่มาใช้เพื่อปรับปรุงประสิทธิภาพของทีม</p>
-
-<!-- 4 -->
-<p>1.4 He will <span class="correct">acquire</span> new skills through training.</p>
-<p>เขาจะได้รับทักษะใหม่ผ่านการฝึกอบรม</p>
-
-<!-- 5 -->
-<p>1.5 They had to <span class="correct">abandon</span> their old car.</p>
-<p>พวกเขาต้องละทิ้งรถเก่าของพวกเขา</p>
-
-<!-- 6 -->
-<p>1.6 The rule is <span class="correct">absolute</span>; there are no exceptions.</p>
-<p>กฎนี้เป็นสิ่งที่เด็ดขาด ไม่มีข้อยกเว้น</p>
-
-<!-- 7 -->
-<p>1.7 The sponge will <span class="correct">absorb</span> the spilled water.</p>
-<p>ฟองน้ำจะดูดซับน้ำที่หก</p>
-
-<!-- 8 -->
-<p>1.8 The painting is <span class="correct">abstract</span>, filled with vibrant colors.</p>
-<p>ภาพวาดนั้นเป็นแบบนามธรรม เต็มไปด้วยสีสันที่สดใส</p>
-
-<!-- 9 -->
-<p>1.9 She pursued an <span class="correct">academic</span> career in science.</p>
-<p>เธอติดตามอาชีพด้านวิทยาศาสตร์ในสายวิชาการ</p>
-
-<!-- 10 -->
-<p>1.10 Her <span class="correct">accent</span> revealed her European background.</p>
-<p>สำเนียงของเธอเผยให้เห็นภูมิหลังของเธอจากยุโรป</p>
-
-<!-- 11 -->
-<p>1.11 Your behavior is not <span class="correct">acceptable</span> in this class.</p>
-<p>พฤติกรรมของคุณไม่สามารถยอมรับได้ในชั้นเรียนนี้</p>
-
-<!-- 12 -->
-<p>1.12 I <span class="correct">accidentally</span> dropped my phone on the floor.</p>
-<p>ฉันทำโทรศัพท์ตกลงบนพื้นโดยไม่ได้ตั้งใจ</p>
-
-<!-- 13 -->
-<p>1.13 The hotel can <span class="correct">accommodate</span> up to 200 guests.</p>
-<p>โรงแรมสามารถรองรับแขกได้ถึง 200 คน</p>
-
-<!-- 14 -->
-<p>1.14 He will <span class="correct">accompany</span> you to the conference.</p>
-<p>เขาจะไปกับคุณในการประชุม</p>
-
-<!-- 15 -->
-<p>1.15 The accountant managed the company's <span class="correct">accounts</span>.</p>
-<p>นักบัญชีจัดการบัญชีของบริษัท</p>
-
-<!-- 16 -->
-<p>1.16 Please provide an accurate <span class="correct">account</span> of the incident.</p>
-<p>กรุณารายงานเหตุการณ์ที่เกิดขึ้นอย่างถูกต้อง</p>
-
-<!-- 17 -->
-<p>1.17 They <span class="correct">accused</span> him of stealing the money.</p>
-<p>พวกเขาได้กล่าวหาเขาว่าขโมยเงิน</p>
-
-<!-- 18 -->
-<p>1.18 Be careful; that substance is highly <span class="correct">acidic</span>.</p>
-<p>ระวังนะ; สารนั้นเป็นกรดสูง</p>
-
-<!-- 19 -->
-<p>1.19 She will <span class="correct">acquire</span> new skills through training.</p>
-<p>เธอจะได้ทักษะใหม่ผ่านการฝึกอบรม</p>
-
-<!-- 20 -->
-<p>1.20 You need to <span class="correct">activate</span> your membership online.</p>
-<p>คุณต้องเปิดใช้งานการเป็นสมาชิกของคุณออนไลน์</p>
-
-<!-- 21 -->
-<p>1.21 The actual size of the book is <span class="correct">larger</span> than I expected.</p>
-<p>ขนาดจริงของหนังสือใหญ่กว่าที่ฉันคาดไว้</p>
-
-<!-- 22 -->
-<p>1.22 The actual price of the item was <span class="correct">lower</span> than I thought.</p>
-<p>ราคาจริงของสินค้าต่ำกว่าที่ฉันคิดไว้</p>
-
-<!-- 23 -->
-<p>1.23 We need to <span class="correct">adapt</span> to the changing circumstances.</p>
-<p>เราจำเป็นต้องปรับตัวให้เข้ากับสถานการณ์ที่เปลี่ยนแปลง</p>
-
-<!-- 24 -->
-<p>1.24 Overcoming <span class="correct">addiction</span> can be a challenging journey.</p>
-<p>การเอาชนะการติดยาเสพติดสามารถเป็นการเดินทางที่ท้าทาย</p>
-
-<!-- 25 -->
-<p>1.25 We may need <span class="correct">additional</span> information to complete the task.</p>
-<p>เราอาจต้องการข้อมูลเพิ่มเติมเพื่อทำงานให้เสร็จ</p>
-
-<!-- 26 -->
-<p>1.26 <span class="correct">Additionally</span>, we can discuss other options.</p>
-<p>นอกจากนี้เรายังสามารถพูดคุยเกี่ยวกับตัวเลือกอื่นๆ ได้</p>
-
-<!-- 27 -->
-<p>1.27 Please provide your current <span class="correct">address</span>.</p>
-<p>กรุณาให้ที่อยู่ปัจจุบันของคุณ</p>
-
-<!-- 28 -->
-<p>1.28 Is your budget <span class="correct">adequate</span> for this project?</p>
-<p>งบประมาณของคุณเพียงพอสำหรับโครงการนี้หรือไม่</p>
-
-<!-- 29 -->
-<p>1.29 She handled the situation <span class="correct">adequately</span>.</p>
-<p>เธอจัดการสถานการณ์ได้อย่างเหมาะสม</p>
-
-<!-- 30 -->
-<p>1.30 We can <span class="correct">adjust</span> the settings to improve performance.</p>
-<p>เราสามารถปรับการตั้งค่าเพื่อปรับปรุงประสิทธิภาพ</p>
-
+      
+     <div class="navigation">
+  <button type="button" onclick="prevQuestion()">ย้อนกลับ</button>
+  <button type="button" onclick="nextQuestion()">ถัดไป</button>
 </div>
 
+    </form>
 
     <div class="home">
-      <a href="index.html">🏠 กลับหน้าแรก</a>
+      <a href="practic.html">🏠 กลับไปหน้าแบบฝึก</a>
     </div>
   </div>
+
+<div class="submit-container">
+  <button onclick="checkAnswers()" style="margin-top: 20px;">ส่งคำตอบ</button>
+  <div id="score-display" style="margin-top: 10px; font-weight: bold; color: #ff69b4;"></div>
+</div>
+
+<div id="feedback" style="margin-top: 20px;"></div>
+
 <script>
-  function checkAnswers() {
-  // คำตอบที่ถูกต้อง
-  const correctAnswers = {
-    answer1: 'abide',
-    answer2: 'accessorize',
-    answer3: 'accomplish',
-    answer4: 'acknowledge',
-    answer5: 'abandon',
-    answer6: 'absolute',
-    answer7: 'absorb',
-    answer8: 'abstract',
-    answer9: 'academic',
-    answer10: 'accent',
-    answer11: 'acceptable',
-    answer12: 'accidentally',
-    answer13: 'accommodate',
-    answer14: 'accompany',
-    answer15: 'accomplish',
-    answer16: 'account',
-    answer17: 'accuse',
-    answer18: 'acidic',
-    answer19: 'acknowledge',
-    answer20: 'adjust',
-    answer21: 'larger',
-    answer22: 'lower',
-    answer23: 'adapt',
-    answer24: 'addiction',
-    answer25: 'additional',
-    answer26: 'Additionally',
-    answer27: 'address',
-    answer28: 'adequate',
-    answer29: 'adequately',
-    answer30: 'adjust'
+function checkAnswers() {
+  const answers = {
+   q2_1: { answer: "balanced", label: "ข้อ 2.1" },
+    q2_2: { answer: "bear", label: "ข้อ 2.2" },
+    q2_3: { answer: "healthcare", label: "ข้อ 2.3" },
+    q2_4: { answer: "coverage", label: "ข้อ 2.4" },
+    q2_5: { answer: "boost", label: "ข้อ 2.5" },
+    q2_6: { answer: "additionally", label: "ข้อ 2.6" },
+    q2_7: { answer: "spice", label: "ข้อ 2.7" },
+    q2_8: { answer: "sum", label: "ข้อ 2.8" },
+    q2_9: { answer: "housing", label: "ข้อ 2.9" },
+    q2_10: { answer: "agriculture", label: "ข้อ 2.10" },
+    q2_11: { answer: "fever", label: "ข้อ 2.11" },
+    q2_12: { answer: "AIDS", label: "ข้อ 2.12" },
+    q2_13: { answer: "equal", label: "ข้อ 2.13" },
+    q2_14: { answer: "equal", label: "ข้อ 2.14" },
+    q2_15: { answer: "mass", label: "ข้อ 2.15" },
+    q2_16: { answer: "silence", label: "ข้อ 2.16" },
+    q2_17: { answer: "civilization", label: "ข้อ 2.17" },
+    q2_18: { answer: "shock", label: "ข้อ 2.18" },
+    q2_19: { answer: "ideal", label: "ข้อ 2.19" },
+    q2_20: { answer: "anxiety", label: "ข้อ 2.20" },
+    q2_21: { answer: "apparently", label: "ข้อ 2.21" },
+    q2_22: { answer: "rat", label: "ข้อ 2.22" },
+    q2_23: { answer: "conscious", label: "ข้อ 2.23" },
+    q2_24: { answer: "artificial", label: "ข้อ 2.24" },
+    q2_25: { answer: "shadow", label: "ข้อ 2.25" },
+    q2_26: { answer: "stream", label: "ข้อ 2.26" },
+    q2_27: { answer: "stroke", label: "ข้อ 2.27" },
+    q2_28: { answer: "blow", label: "ข้อ 2.28" },
+    q2_29: { answer: "immune", label: "ข้อ 2.29" },
+    q2_30: { answer: "tsunami", label: "ข้อ 2.30" }
   };
 
+  let feedbackHTML = "<h3>เฉลย:</h3><ul>";
   let score = 0;
-  for (let i = 1; i <= 30; i++) {
-    const answer = document.getElementById(`answer${i}`).value;
-    if (answer === correctAnswers[`answer${i}`]) {
+  let total = 0;
+
+  for (const key in answers) {
+    const inputEl = document.querySelector(`[name="${key}"]`);
+    if (!inputEl) continue; // ป้องกัน error ถ้ายังไม่มีคำถาม
+
+    const userAnswer = inputEl.value.trim().toLowerCase();
+    const correctAnswer = answers[key].answer.toLowerCase();
+    const label = answers[key].label;
+
+    total++;
+    if (userAnswer === correctAnswer) {
       score++;
+      feedbackHTML += `<li>${label}: ✅ <span class="correct-answer">${userAnswer}</span></li>`;
+    } else {
+      feedbackHTML += `<li>${label}: ❌ <span class="incorrect-answer">${userAnswer}</span> → <strong class="incorrect-answer">${correctAnswer}</strong></li>`;
     }
   }
 
-  // แสดงคะแนน
-  document.getElementById("score").textContent = `คะแนน: ${score}/30`;
-
-  // แสดงเฉลย
-  document.getElementById("answers").style.display = 'block';
+  feedbackHTML += `</ul><p><strong>คะแนนรวม: ${score} / ${total}</strong></p>`;
+  document.getElementById("feedback").innerHTML = feedbackHTML;
 }
 
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  speechSynthesis.speak(utterance);
+}
 
-  </script>
+let currentQuestion = 0;
+const questions = document.querySelectorAll('.question-box');
+
+function showQuestion(index) {
+  questions.forEach((q, i) => {
+    q.classList.remove('active');
+    if (i === index) {
+      q.classList.add('active');
+    }
+  });
+}
+
+function nextQuestion() {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+  }
+}
+
+// เรียกตอนโหลดหน้าครั้งแรก
+showQuestion(currentQuestion);
+</script>
+
+
+
+<style>
+  .correct-answer {
+    color: green;
+    font-weight: bold;
+  }
+  .incorrect-answer {
+    color: red;
+    font-weight: bold;
+  }
+</style>
 </body>
 </html>
