@@ -78,6 +78,10 @@
 
     <button class="back-btn" onclick="window.location.href='index.html'">🏠 กลับหน้าแรก</button>
   </div>
-
+ <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>
