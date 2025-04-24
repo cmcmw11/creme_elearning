@@ -487,6 +487,10 @@ document.getElementById("submitBtn").addEventListener("click", () => {
 });
 
 </script>
-
+ <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>
