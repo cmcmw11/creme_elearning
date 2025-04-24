@@ -26,8 +26,8 @@
       border-radius: 20px;
       box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
       padding: 2rem 1.5rem;
-      max-width: 430px;
-      width: 90%;
+      max-width: 90%;
+      width: 450px;
       text-align: center;
     }
 
@@ -38,10 +38,10 @@
     }
 
     .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ */
       gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     .menu a {
@@ -55,6 +55,7 @@
       font-weight: bold;
       transition: background 0.3s;
       box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+      text-align: center;
     }
 
     .menu a:hover {
@@ -66,18 +67,32 @@
     }
 
     .home a {
-      background: #ffb6c1;
+      background: #a2c8ff;
       padding: 0.6rem 1.2rem;
       border-radius: 30px;
       color: white;
       text-decoration: none;
       font-size: 1rem;
       font-weight: bold;
-      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+      box-shadow: 0 4px 10px rgba(162, 200, 255, 0.4);
     }
 
     .home a:hover {
-      background-color: #ff7a95;
+      background-color: #7dbbff;
+    }
+
+    /* Mobile-friendly adjustments */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+      .menu {
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์บนมือถือ */
+      }
+      .menu a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.1rem;
+      }
     }
   </style>
 </head>
@@ -85,7 +100,7 @@
   <div class="container">
     <h1>📝 แบบฝึกหัดเลือกคำตอบ - เลือกชุด</h1>
     <div class="menu">
-      <a href="multiple-choice-set1.html">ชุดที่ 1</a>
+         <a href="multiple-choice-set1.html">ชุดที่ 1</a>
       <a href="multiple-choice-set2.html">ชุดที่ 2</a>
       <a href="multiple-choice-set3.html">ชุดที่ 3</a>
       <a href="multiple-choice-set4.html">ชุดที่ 4</a>
@@ -125,7 +140,6 @@
 <a href="multiple-choice-set38.html">ชุดที่ 38</a><br>
 <a href="multiple-choice-set39.html">ชุดที่ 39</a><br>
 <a href="multiple-choice-set40.html">ชุดที่ 40</a><br>
-
     </div>
     <div class="home">
       <a href="practic.html">ย้อนกลับ</a>
