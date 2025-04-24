@@ -544,7 +544,11 @@ function prevQuestion() {
 // เรียกตอนโหลดหน้าครั้งแรก
 showQuestion(currentQuestion);
 </script>
-
+ <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
 
 
 <style>
