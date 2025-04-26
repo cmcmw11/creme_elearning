@@ -1,1 +1,569 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบฝึกหัด  Multiple Choice ชุดที่ 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #ff4d6d;
+    }
+    .question-box {
+      display: none;
+    }
+    .question-box.active {
+      display: block;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background: #ffe5ec;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #ffb6c1;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+    button:hover {
+      background: #ff7a95;
+    }
+    .home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .home a {
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background: #ffc2d1;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    }
+    .submit-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: left;
+      border: 2px solid #ff4d6d;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background-color: #ffe5ec;
+      width: 90%;
+      max-width: 500px;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 แบบฝึกหัด  Multiple Choice  🌸</h1>
+    <form id="quizForm">
+     <!-- Multiple Choice ชุดที่ 3 -->
+<div class="question-box active">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.1 What is the meaning of "booking"?</p>
+  <div class="options">
+    <label><input type="radio" name="q1" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q1" value="การจอง"> การจอง</label>
+    <label><input type="radio" name="q1" value="การบุกรุก"> การบุกรุก</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.2 What is the meaning of "capture"?</p>
+  <div class="options">
+    <label><input type="radio" name="q2" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q2" value="การจับกุม"> การจับกุม</label>
+    <label><input type="radio" name="q2" value="การปล้น"> การปล้น</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.3 What is the meaning of "matching"?</p>
+  <div class="options">
+    <label><input type="radio" name="q3" value="การจับคู่"> การจับคู่</label>
+    <label><input type="radio" name="q3" value="การบุกรุก"> การบุกรุก</label>
+    <label><input type="radio" name="q3" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.4 What is the meaning of "negotiation"?</p>
+  <div class="options">
+    <label><input type="radio" name="q4" value="การทดสอบ"> การทดสอบ</label>
+    <label><input type="radio" name="q4" value="การเจรจาต่อรอง"> การเจรจาต่อรอง</label>
+    <label><input type="radio" name="q4" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.5 What is the meaning of "fraud"?</p>
+  <div class="options">
+    <label><input type="radio" name="q5" value="การประชุมเชิงปฏิบัติการ"> การประชุมเชิงปฏิบัติการ</label>
+    <label><input type="radio" name="q5" value="การฉ้อโกง"> การฉ้อโกง</label>
+    <label><input type="radio" name="q5" value="การเปลี่ยนแปลง"> การเปลี่ยนแปลง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.6 What is the meaning of "usage"?</p>
+  <div class="options">
+    <label><input type="radio" name="q6" value="การทำลาย"> การทำลาย</label>
+    <label><input type="radio" name="q6" value="การทำงาน"> การทำงาน</label>
+    <label><input type="radio" name="q6" value="การใช้งาน"> การใช้งาน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.7 What is the meaning of "trading"?</p>
+  <div class="options">
+    <label><input type="radio" name="q7" value="การซื้อขาย"> การซื้อขาย</label>
+    <label><input type="radio" name="q7" value="การบรรเทา"> การบรรเทา</label>
+    <label><input type="radio" name="q7" value="การบุกรุก"> การบุกรุก</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.8 What is the meaning of "existence"?</p>
+  <div class="options">
+    <label><input type="radio" name="q8" value="การตัดสิน"> การตัดสิน</label>
+    <label><input type="radio" name="q8" value="การจอง"> การจอง</label>
+    <label><input type="radio" name="q8" value="การดำรงอยู่"> การดำรงอยู่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.9 What is the meaning of "hearing"?</p>
+  <div class="options">
+    <label><input type="radio" name="q9" value="การได้ยิน"> การได้ยิน</label>
+    <label><input type="radio" name="q9" value="การซื้อขาย"> การซื้อขาย</label>
+    <label><input type="radio" name="q9" value="การบุกรุก"> การบุกรุก</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.10 What is the meaning of "decoration"?</p>
+  <div class="options">
+    <label><input type="radio" name="q10" value="การตรวจคนเข้าเมือง"> การตรวจคนเข้าเมือง</label>
+    <label><input type="radio" name="q10" value="การตกแต่ง"> การตกแต่ง</label>
+    <label><input type="radio" name="q10" value="การผสมผสาน"> การผสมผสาน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.11 What is the meaning of "immigration"?</p>
+  <div class="options">
+    <label><input type="radio" name="q11" value="การฉ้อโกง"> การฉ้อโกง</label>
+    <label><input type="radio" name="q11" value="การตรวจคนเข้าเมือง"> การตรวจคนเข้าเมือง</label>
+    <label><input type="radio" name="q11" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.12 What is the meaning of "examination"?</p>
+  <div class="options">
+    <label><input type="radio" name="q12" value="การตรวจสอบ"> การตรวจสอบ</label>
+    <label><input type="radio" name="q12" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q12" value="การเผยแพร่"> การเผยแพร่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.13 What is the meaning of "preparation"?</p>
+  <div class="options">
+    <label><input type="radio" name="q13" value="การประกวด"> การประกวด</label>
+    <label><input type="radio" name="q13" value="การตระเตรียม"> การตระเตรียม</label>
+    <label><input type="radio" name="q13" value="การบริจาค"> การบริจาค</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.14 What is the meaning of "battle"?</p>
+  <div class="options">
+    <label><input type="radio" name="q14" value="การได้ยิน"> การได้ยิน</label>
+    <label><input type="radio" name="q14" value="การจอง"> การจอง</label>
+    <label><input type="radio" name="q14" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.15 What is the meaning of "martial"?</p>
+  <div class="options">
+    <label><input type="radio" name="q15" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q15" value="การประชุม"> การประชุม</label>
+    <label><input type="radio" name="q15" value="การได้ยิน"> การได้ยิน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.16 What is the meaning of "struggle"?</p>
+  <div class="options">
+    <label><input type="radio" name="q16" value="การนำทาง"> การนำทาง</label>
+    <label><input type="radio" name="q16" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q16" value="การดำรงอยู่"> การดำรงอยู่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.17 What is the meaning of "judgement"?</p>
+  <div class="options">
+    <label><input type="radio" name="q17" value="การติดเชื้อ"> การติดเชื้อ</label>
+    <label><input type="radio" name="q17" value="การตัดสิน"> การตัดสิน</label>
+    <label><input type="radio" name="q17" value="การเผยแพร่"> การเผยแพร่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.18 What is the meaning of "infection"?</p>
+  <div class="options">
+    <label><input type="radio" name="q18" value="การซื้อขาย"> การซื้อขาย</label>
+    <label><input type="radio" name="q18" value="การติดเชื้อ"> การติดเชื้อ</label>
+    <label><input type="radio" name="q18" value="การป้องกัน"> การป้องกัน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.19 What is the meaning of "comic"?</p>
+  <div class="options">
+    <label><input type="radio" name="q19" value="การจับคู่"> การจับคู่</label>
+    <label><input type="radio" name="q19" value="การตัดสิน"> การตัดสิน</label>
+    <label><input type="radio" name="q19" value="การ์ตูน"> การ์ตูน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.20 What is the meaning of "controversy"?</p>
+  <div class="options">
+    <label><input type="radio" name="q20" value="การประชุมเชิงปฏิบัติการ"> การประชุมเชิงปฏิบัติการ</label>
+    <label><input type="radio" name="q20" value="การโต้เถียง"> การโต้เถียง</label>
+    <label><input type="radio" name="q20" value="การตระเตรียม"> การตระเตรียม</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.21 What is the meaning of "testing"?</p>
+  <div class="options">
+    <label><input type="radio" name="q21" value="การทดสอบ"> การทดสอบ</label>
+    <label><input type="radio" name="q21" value="การผลิต"> การผลิต</label>
+    <label><input type="radio" name="q21" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.22 What is the meaning of "function"?</p>
+  <div class="options">
+    <label><input type="radio" name="q22" value="การบุกรุก"> การบุกรุก</label>
+    <label><input type="radio" name="q22" value="การทำงาน"> การทำงาน</label>
+    <label><input type="radio" name="q22" value="การเผยแพร่"> การเผยแพร่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.23 What is the meaning of "destruction"?</p>
+  <div class="options">
+    <label><input type="radio" name="q23" value="การทำลาย"> การทำลาย</label>
+    <label><input type="radio" name="q23" value="การจับกุม"> การจับกุม</label>
+    <label><input type="radio" name="q23" value="การใช้งาน"> การใช้งาน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.24 What is the meaning of "navigation"?</p>
+  <div class="options">
+    <label><input type="radio" name="q24" value="การตกแต่ง"> การตกแต่ง</label>
+    <label><input type="radio" name="q24" value="การจับคู่"> การจับคู่</label>
+    <label><input type="radio" name="q24" value="การนำทาง"> การนำทาง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.25 What is the meaning of "relief"?</p>
+  <div class="options">
+    <label><input type="radio" name="q25" value="การบรรเทา"> การบรรเทา</label>
+    <label><input type="radio" name="q25" value="การปล้น"> การปล้น</label>
+    <label><input type="radio" name="q25" value="การซื้อขาย"> การซื้อขาย</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.26 What is the meaning of "donation"?</p>
+  <div class="options">
+    <label><input type="radio" name="q26" value="การบริจาค"> การบริจาค</label>
+    <label><input type="radio" name="q26" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q26" value="การดำรงอยู่"> การดำรงอยู่</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.27 What is the meaning of "consumption"?</p>
+  <div class="options">
+    <label><input type="radio" name="q27" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q27" value="การบริโภค"> การบริโภค</label>
+    <label><input type="radio" name="q27" value="การตัดสิน"> การตัดสิน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.28 What is the meaning of "invasion"?</p>
+  <div class="options">
+    <label><input type="radio" name="q28" value="การฉ้อโกง"> การฉ้อโกง</label>
+    <label><input type="radio" name="q28" value="การบุกรุก"> การบุกรุก</label>
+    <label><input type="radio" name="q28" value="การบริจาค"> การบริจาค</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.29 What is the meaning of "contest"?</p>
+  <div class="options">
+    <label><input type="radio" name="q29" value="การประกวด"> การประกวด</label>
+    <label><input type="radio" name="q29" value="การประชุม"> การประชุม</label>
+    <label><input type="radio" name="q29" value="การเปลี่ยนแปลง"> การเปลี่ยนแปลง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.30 What is the meaning of "convention"?</p>
+  <div class="options">
+    <label><input type="radio" name="q30" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q30" value="การนำทาง"> การนำทาง</label>
+    <label><input type="radio" name="q30" value="การประชุม"> การประชุม</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.31 What is the meaning of "session"?</p>
+  <div class="options">
+    <label><input type="radio" name="q31" value="การประชุมเชิงปฏิบัติการ"> การประชุมเชิงปฏิบัติการ</label>
+    <label><input type="radio" name="q31" value="การประชุม"> การประชุม</label>
+    <label><input type="radio" name="q31" value="การป้องกัน"> การป้องกัน</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.32 What is the meaning of "workshop"?</p>
+  <div class="options">
+    <label><input type="radio" name="q32" value="การประชุมเชิงปฏิบัติการ"> การประชุมเชิงปฏิบัติการ</label>
+    <label><input type="radio" name="q32" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q32" value="การซื้อขาย"> การซื้อขาย</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.33 What is the meaning of "robbery"?</p>
+  <div class="options">
+    <label><input type="radio" name="q33" value="การปล้น"> การปล้น</label>
+    <label><input type="radio" name="q33" value="การต่อสู้"> การต่อสู้</label>
+    <label><input type="radio" name="q33" value="การตรวจคนเข้าเมือง"> การตรวจคนเข้าเมือง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.34 What is the meaning of "protection"?</p>
+  <div class="options">
+    <label><input type="radio" name="q34" value="การบริจาค"> การบริจาค</label>
+    <label><input type="radio" name="q34" value="การป้องกัน"> การป้องกัน</label>
+    <label><input type="radio" name="q34" value="การพยาบาล"> การพยาบาล</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.35 What is the meaning of "variation"?</p>
+  <div class="options">
+    <label><input type="radio" name="q35" value="การจับกุม"> การจับกุม</label>
+    <label><input type="radio" name="q35" value="การเปลี่ยนแปลง"> การเปลี่ยนแปลง</label>
+    <label><input type="radio" name="q35" value="การปล้น"> การปล้น</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.36 What is the meaning of "manufacture"?</p>
+  <div class="options">
+    <label><input type="radio" name="q36" value="การผลิต"> การผลิต</label>
+    <label><input type="radio" name="q36" value="การติดเชื้อ"> การติดเชื้อ</label>
+    <label><input type="radio" name="q36" value="การต่อสู้"> การต่อสู้</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.37 What is the meaning of "combination"?</p>
+  <div class="options">
+    <label><input type="radio" name="q37" value="การจอง"> การจอง</label>
+    <label><input type="radio" name="q37" value="การผสมผสาน"> การผสมผสาน</label>
+    <label><input type="radio" name="q37" value="การทำลาย"> การทำลาย</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.38 What is the meaning of "publicity"?</p>
+  <div class="options">
+    <label><input type="radio" name="q38" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q38" value="การประชุม"> การประชุม</label>
+    <label><input type="radio" name="q38" value="การเปลี่ยนแปลง"> การเปลี่ยนแปลง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.39 What is the meaning of "publishing"?</p>
+  <div class="options">
+    <label><input type="radio" name="q39" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q39" value="การบริจาค"> การบริจาค</label>
+    <label><input type="radio" name="q39" value="การเปลี่ยนแปลง"> การเปลี่ยนแปลง</label>
+  </div>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 3 Multiple Choice:</strong><br>3.40 What is the meaning of "nursing"?</p>
+  <div class="options">
+    <label><input type="radio" name="q40" value="การเผยแพร่"> การเผยแพร่</label>
+    <label><input type="radio" name="q40" value="การโต้เถียง"> การโต้เถียง</label>
+    <label><input type="radio" name="q40" value="การพยาบาล"> การพยาบาล</label>
+  </div>
+</div>
+
+
+
+      <div class="navigation">
+        <button type="button" id="prevBtn">ย้อนกลับ</button>
+        <button type="button" id="nextBtn">ถัดไป</button>
+      </div>
+    </form>
+    <div class="submit-container">
+      <button type="button" id="submitBtn">✅ ส่งคำตอบ</button>
+    </div>
+    <div id="feedback"></div>
+    <div class="home">
+      <a href="practic.html">🏠 กลับไปหน้าแบบฝึก</a>
+    </div>
+  </div>
+  <script>
+  const boxes = document.querySelectorAll(".question-box");
+  let current = 0;
+
+  function showQuestion(index) {
+    boxes.forEach((box, i) => {
+      box.classList.toggle("active", i === index);
+    });
+  }
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    if (current > 0) {
+      current--;
+      showQuestion(current);
+    }
+  });
+
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    if (current < boxes.length - 1) {
+      current++;
+      showQuestion(current);
+    } else {
+      alert("ทำครบแล้วจ้า! 🎉");
+    }
+  });
+document.getElementById("submitBtn").addEventListener("click", () => {
+    let score = 0;
+    let feedbackText = "";
+
+    const answers = {
+  q1: "การจอง",
+  q2: "การจับกุม",
+  q3: "การจับคู่",
+  q4: "การเจรจาต่อรอง",
+  q5: "การฉ้อโกง",
+  q6: "การใช้งาน",
+  q7: "การซื้อขาย",
+  q8: "การดำรงอยู่",
+  q9: "การได้ยิน",
+  q10: "การตกแต่ง",
+  q11: "การตรวจคนเข้าเมือง",
+  q12: "การตรวจสอบ",
+  q13: "การตระเตรียม",
+  q14: "การต่อสู้",
+  q15: "การต่อสู้",
+  q16: "การต่อสู้",
+  q17: "การตัดสิน",
+  q18: "การติดเชื้อ",
+  q19: "การ์ตูน",
+  q20: "การโต้เถียง",
+  q21: "การทดสอบ",
+  q22: "การทำงาน",
+  q23: "การทำลาย",
+  q24: "การนำทาง",
+  q25: "การบรรเทา",
+  q26: "การบริจาค",
+  q27: "การบริโภค",
+  q28: "การบุกรุก",
+  q29: "การประกวด",
+  q30: "การประชุม",
+  q31: "การประชุม",
+  q32: "การประชุมเชิงปฏิบัติการ",
+  q33: "การปล้น",
+  q34: "การป้องกัน",
+  q35: "การเปลี่ยนแปลง",
+  q36: "การผลิต",
+  q37: "การผสมผสาน",
+  q38: "การเผยแพร่",
+  q39: "การเผยแพร่",
+  q40: "การพยาบาล",
+    };
+
+    // Loop to check each question and compare user's answer with the correct answer
+    for (let i = 1; i <= 40; i++) {
+        const name = "q" + i;
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        const answer = answers[name];
+        const userAnswer = selected ? selected.value : 'ยังไม่ได้เลือก';
+        const correct = selected && selected.value === answer;
+        
+        if (correct) score++;
+
+        // Add feedback for each question
+        feedbackText += `<p>${i}. คำตอบของคุณ: ${userAnswer} (${correct ? '✅' : `❌ คำตอบที่ถูกต้องคือ ${answer}`})</p>`;
+    }
+
+    // Display total score and feedback
+    feedbackText += `<p><strong>คะแนนรวม: ${score} / 40</strong></p>`;
+    document.getElementById("feedback").innerHTML = feedbackText;
+});
+
+</script>
+ <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
 
