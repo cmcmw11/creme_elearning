@@ -107,6 +107,28 @@
       color: #999;
       margin-bottom: 2rem;
     }
+.download-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.9rem 1.1rem;
+  background: white;
+  color: #ff5e8e;
+  border: 2px solid #ffc2d1;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  width: 80%;
+  max-width: 320px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+}
+
+.download-button:hover {
+  background: #ffe9f0;
+  transform: scale(1.03);
+}
+
   </style>
 </head>
 <body>
@@ -124,7 +146,12 @@
 
   <main>
     <a class="main-button" href="vocab.html">📖 เรียนคำศัพท์</a>
+<a class="download-button" href="ฟ้าศัพท์ebook.pdf" download>📘 ดาวน์โหลดไฟล์คำศัพท์ </a>
     <a class="main-button" href="practic.html">📝 แบบฝึกหัด</a>
+    <a class="download-button" href="ชมพูแบบฝึกebook.pdf" download>📕 ดาวน์โหลดไฟล์แบบฝึกหัด </a>
+    
+
+
   </main>
 
   <footer>
