@@ -1,1 +1,355 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เรียนคำศัพท์ C1 - Creme E-Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fffafc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+      padding-bottom: 3rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(255,182,193,0.2);
+    }
+
+    header {
+      background: #ffc0cb;
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.3rem;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .search-container {
+      text-align: center;
+      margin: 1rem 0 0.5rem;
+    }
+
+    #searchInput {
+      width: 85%;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border-radius: 25px;
+      border: 1px solid #ffc0cb;
+      background: #fff0f5;
+      color: #333;
+      outline: none;
+    }
+
+    #searchInput:focus {
+      box-shadow: 0 0 5px #ffb6c1;
+    }
+
+    .filter {
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+
+    .filter select {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid #ffc2d1;
+      background-color: #fff0f5;
+      font-size: 1rem;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 1rem 2rem;
+    }
+
+    .card {
+      background: #ffe0e9;
+      border-radius: 25px;
+      width: 95%;
+      padding: 1rem 1.2rem;
+      margin: 0.8rem 0;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+      transition: 0.3s ease;
+      border: 2px solid #ffd6de;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .word {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff4d6d;
+    }
+
+    .type {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+
+    .meaning {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .example {
+      font-style: italic;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .sound {
+      margin-top: 0.5rem;
+    }
+
+    .sound button {
+      background: #ffb6c1;
+      border: none;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+
+    .home-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 1.5rem;
+}
+
+    .home-btn {
+      background-color: #ffb6c1;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+      transition: background 0.3s;
+    }
+
+    .home-btn:hover {
+      background-color: #ff99b2;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>📖 เรียนคำศัพท์ C1</header>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="🔍 ค้นหาคำศัพท์..." oninput="filterBySearch()">
+    </div>
+
+    <div class="filter">
+      <label for="az">กรอง A-Z: </label>
+      <select id="az" onchange="filterAZ()">
+       <option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="E">E</option>
+<option value="F">F</option>
+<option value="G">G</option>
+<option value="H">H</option>
+<option value="I">I</option>
+<option value="J">J</option>
+<option value="K">K</option>
+<option value="L">L</option>
+<option value="M">M</option>
+<option value="N">N</option>
+<option value="O">O</option>
+<option value="P">P</option>
+<option value="Q">Q</option>
+<option value="R">R</option>
+<option value="S">S</option>
+<option value="T">T</option>
+<option value="U">U</option>
+<option value="V">V</option>
+<option value="W">W</option>
+<option value="X">X</option>
+<option value="Y">Y</option>
+<option value="Z">Z</option>
+
+      </select>
+    </div>
+
+  <div class="cards" id="cardContainer">
+  <!-- การ์ดจาก CSV จะถูกเพิ่มที่นี่ -->
+</div>
+
+<!-- ย้ายเข้ามาในนี้ -->
+<div class="home-container">
+  <button class="home-btn" onclick="window.location.href='hompageC1.html.html'">
+    🏠 กลับหน้าแรก
+  </button>
+</div>
+
+
+
+  <script>
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function filterBySearch() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = Array.from(document.querySelectorAll('.card'));
+
+      if (!input) {
+        cards.forEach(card => card.style.display = 'block');
+        return;
+      }
+
+      let found = false;
+
+      cards.forEach((card, index) => {
+        const word = (card.dataset.word || '').toLowerCase();
+        if (!found && word.startsWith(input)) {
+          found = true;
+          for (let i = 0; i < cards.length; i++) {
+            cards[i].style.display = (i >= index) ? 'block' : 'none';
+          }
+
+          setTimeout(() => {
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            card.style.border = '3px dashed hotpink';
+            setTimeout(() => card.style.border = '2px solid #ffd6de', 1500);
+          }, 100);
+        }
+      });
+
+      if (!found) {
+        cards.forEach(card => card.style.display = 'none');
+      }
+    }
+
+    function filterAZ() {
+      const selected = document.getElementById('az').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const word = card.dataset.word.toLowerCase();
+        card.style.display = selected === "" || word.startsWith(selected) ? 'block' : 'none';
+      });
+    }
+  </script>
+<script>
+  function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function filterBySearch() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = Array.from(document.querySelectorAll('.card'));
+
+    if (!input) {
+      cards.forEach(card => card.style.display = 'block');
+      return;
+    }
+
+    let found = false;
+
+    cards.forEach((card, index) => {
+      const word = (card.dataset.word || '').toLowerCase();
+      if (!found && word.startsWith(input)) {
+        found = true;
+        for (let i = 0; i < cards.length; i++) {
+          cards[i].style.display = (i >= index) ? 'block' : 'none';
+        }
+
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          card.style.border = '3px dashed hotpink';
+          setTimeout(() => card.style.border = '2px solid #ffd6de', 1500);
+        }, 100);
+      }
+    });
+
+    if (!found) {
+      cards.forEach(card => card.style.display = 'none');
+    }
+  }
+
+  function filterAZ() {
+    const selected = document.getElementById('az').value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const word = card.dataset.word.toLowerCase();
+      card.style.display = selected === "" || word.startsWith(selected) ? 'block' : 'none';
+    });
+  }
+
+  function loadCSVData() {
+    fetch('vocabularyC1.csv')
+      .then(response => response.text())
+      .then(text => {
+        const lines = text.trim().split('\n');
+        const container = document.getElementById('cardContainer');
+        lines.shift(); // เอาหัวตารางออก
+
+        lines.forEach(line => {
+          const [word, translation, pos, sentence, sentenceTranslation] = line.split(',');
+
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.dataset.word = word;
+
+          card.innerHTML = `
+            <div class="word">${word}</div>
+            <div class="type">${pos}</div>
+            <div class="meaning">${translation}</div>
+            <div class="example">${sentence}<br><span style="color:#999">${sentenceTranslation}</span></div>
+            <div class="sound">
+              <button onclick="speak('${word}')">🔊 คำศัพท์</button>
+              <button onclick="speak('${sentence}')">🔈 ประโยค</button>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error('ไม่สามารถโหลด CSV:', err);
+        document.getElementById('cardContainer').innerHTML = '<p style="color:red;">ไม่พบไฟล์ vocabularyC1.csv</p>';
+      });
+  }
+
+  // โหลด CSV ตอนเปิดหน้า
+  window.onload = loadCSVData;
+</script>
+
+
+</body>
+</html>
