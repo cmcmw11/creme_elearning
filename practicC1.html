@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>แบบฝึกหัดคำศัพท์ - Creme E-Learning</title>
+ <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background-color: #fffafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .menu-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(255,182,193,0.3);
+      text-align: center;
+      width: 95%;
+      max-width: 430px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .exercise-btn {
+      display: block;
+      background-color: #ffc0cb;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      border-radius: 30px;
+      margin: 0.7rem 0;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+      box-shadow: 0 3px 10px rgba(255,182,193,0.3);
+    }
+
+    .exercise-btn:hover {
+      background-color: #ff8fab;
+    }
+
+    .back-btn {
+      margin-top: 1.5rem;
+      background-color: #ffb6c1;
+      padding: 0.6rem 1rem;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .back-btn:hover {
+      background-color: #ff99b2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-container">
+    <h1>🧠 แบบฝึกหัดคำศัพท์ C1</h1>
+    <a href="fill-in-the-blanksC1.html" class="exercise-btn">✏️ เติมคำจากคำศัพท์</a>
+    <a href="multiple-choiceC1.html" class="exercise-btn">✅ เลือกคำที่ถูกต้อง</a>
+
+    <button class="back-btn" onclick="window.location.href='index.html'">🏠 กลับหน้าแรก</button>
+  </div>
+ <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
