@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" type="image/png" href="cremego.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creme E-Learning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #ffc0cb;
+      color: #fff;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #ff99aa;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100%;
+      background: #fff;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease;
+      padding: 2rem 1.5rem;
+      z-index: 999;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .side-menu h3 {
+      margin: 0 0 1.5rem 0;
+      font-size: 1.3rem;
+      color: #ff5e8e;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 0.9rem 0;
+      color: #ff5e8e;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dashed #ffc2d1;
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .main-button {
+      display: block;
+      margin: 1.2rem auto;
+      padding: 1rem;
+      background: linear-gradient(45deg, #ffb6c1, #ffc0cb);
+      color: white;
+      text-decoration: none;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.2s ease;
+    }
+
+    .main-button:hover {
+      transform: scale(1.03);
+      background: linear-gradient(45deg, #ffa3b5, #ff99aa);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 2rem;
+    }
+.download-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.9rem 1.1rem;
+  background: white;
+  color: #ff5e8e;
+  border: 2px solid #ffc2d1;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  width: 80%;
+  max-width: 320px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+}
+
+.download-button:hover {
+  background: #ffe9f0;
+  transform: scale(1.03);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>🍓 Creme E-Learning</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <div class="side-menu" id="sideMenu">
+    <h3>🌸 เมนูเพิ่มเติม</h3>
+    <a href="https://lin.ee/17ENWHg" target="_blank">💬 ติดต่อเรา</a>
+   <a href="#" onclick="logout()">🚪 ออกจากระบบ</a>
+  </div>
+
+  <main>
+    <a class="main-button" href="vocab.html">📖 เรียนคำศัพท์</a>
+<a class="download-button" href="ฟ้าศัพท์ebook.pdf" download>📘 ดาวน์โหลดไฟล์คำศัพท์ </a>
+    <a class="main-button" href="practic.html">📝 แบบฝึกหัด</a>
+    <a class="download-button" href="ชมพูแบบฝึกebook.pdf" download>📕 ดาวน์โหลดไฟล์แบบฝึกหัด </a>
+    
+
+
+  </main>
+
+  <footer>
+    © 2025 Creme E-Learning | Made with 💖
+  </footer>
+
+ <script>
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    menu.classList.toggle('open');
+  }
+
+  function logout() {
+    // เคลียร์การเข้าสู่ระบบ
+    localStorage.removeItem("loggedIn");
+    sessionStorage.removeItem("loggedIn");
+
+    // เด้งไปหน้า login
+    window.location.href = "login.html";
+  }
+</script>
+
+   <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
