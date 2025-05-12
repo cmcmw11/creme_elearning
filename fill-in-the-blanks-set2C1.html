@@ -1,1 +1,525 @@
+<!DOCTYPE html> 
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบฝึกหัดเติมคำ ชุดที่ 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #ff4d6d;
+    }
+    .question-box {
+      display: none;
+    }
+    .question-box.active {
+      display: block;
+    }
+    .options {
+      margin-top: 1rem;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background: #ffe5ec;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #ffb6c1;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+    button:hover {
+      background: #ff7a95;
+    }
+    .home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .home a {
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background: #ffc2d1;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    }
+    .submit-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: left;
+      border: 2px solid #ff4d6d;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background-color: #ffe5ec;
+      width: 90%;
+      max-width: 500px;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 แบบฝึกหัดเติมคำ C1 ชุดที่ 2  🌸</h1>
+    <form id="quizForm">
+      <!-- Listening Fill-in-the-Blanks -->
+      
 
+    <!-- Add more questions for Listening Fill-in-the-Blanks -->
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.1 Listening Fill-in-the-Blanks:</strong><br>
+  Don't believe every rumor you hear. <input type="text" name="q2_1" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" />
+  <button type="button" onclick="speakWord('Don\'t believe every rumor you hear.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.2 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_2" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> up on someone; it can be startling.
+  <button type="button" onclick="speakWord('Don\'t creep up on someone; it can be startling.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.3 Listening Fill-in-the-Blanks:</strong><br>
+  Don't crush the flowers; they're delicate. <input type="text" name="q2_3" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" />
+  <button type="button" onclick="speakWord('Don\'t crush the flowers; they\'re delicate.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.4 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_4" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> the facts.
+  <button type="button" onclick="speakWord('Don\'t distort the facts.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.5 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_5" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> the facts.
+  <button type="button" onclick="speakWord('Don\'t exaggerate the facts.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.6 Listening Fill-in-the-Blanks:</strong><br>
+  Don't fall for that <input type="text" name="q2_6" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" />.
+  <button type="button" onclick="speakWord('Don\'t fall for that stereotype.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.7 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_7" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> in unhealthy habits.
+  <button type="button" onclick="speakWord('Don\'t indulge in unhealthy habits.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.8 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_8" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> others with hurtful words.
+  <button type="button" onclick="speakWord('Don\'t insult others with hurtful words.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.9 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_9" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> in their personal matters.
+  <button type="button" onclick="speakWord('Don\'t interfere in their personal matters.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.10 Listening Fill-in-the-Blanks:</strong><br>
+  Don't let the wound <input type="text" name="q2_10" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> too much.
+  <button type="button" onclick="speakWord('Don\'t let the wound bleed too much.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.11 Listening Fill-in-the-Blanks:</strong><br>
+  Don't let your <input type="text" name="q2_11" style="border: none; border-bottom: 2px solid #ffb6c1; width: 50px;" /> get in the way.
+  <button type="button" onclick="speakWord('Don\'t let your ego get in the way.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.12 Listening Fill-in-the-Blanks:</strong><br>
+  Don't listen to his <input type="text" name="q2_12" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" />.
+  <button type="button" onclick="speakWord('Don\'t listen to his nonsense.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.13 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_13" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> the data.
+  <button type="button" onclick="speakWord('Don\'t manipulate the data.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.14 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_14" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> over minor details.
+  <button type="button" onclick="speakWord('Don\'t obsess over minor details.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.15 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_15" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> the importance of details.
+  <button type="button" onclick="speakWord('Don\'t overlook the importance of details.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.16 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_16" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> to know everything.
+  <button type="button" onclick="speakWord('Don\'t presume to know everything.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.17 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_17" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> unnecessary conflict.
+  <button type="button" onclick="speakWord('Don\'t provoke unnecessary conflict.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.18 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_18" style="border: none; border-bottom: 2px solid #ffb6c1; width: 50px;" /> the paper; use scissors.
+  <button type="button" onclick="speakWord('Don\'t rip the paper; use scissors.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.19 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_19" style="border: none; border-bottom: 2px solid #ffb6c1; width: 60px;" /> on that lollipop too hard.
+  <button type="button" onclick="speakWord('Don\'t suck on that lollipop too hard.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.20 Listening Fill-in-the-Blanks:</strong><br>
+  Don't <input type="text" name="q2_20" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> fate with risky decisions.
+  <button type="button" onclick="speakWord('Don\'t tempt fate with risky decisions.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.21 Listening Fill-in-the-Blanks:</strong><br>
+  Do you have a <input type="text" name="q2_21" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> about the project?
+  <button type="button" onclick="speakWord('Do you have a query about the project?')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.22 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_22" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> the water from the sink.
+  <button type="button" onclick="speakWord('Drain the water from the sink.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.23 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_23" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> at night can be dangerous if you're tired.
+  <button type="button" onclick="speakWord('Driving at night can be dangerous if you\'re tired.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.24 Listening Fill-in-the-Blanks:</strong><br>
+  Ducks swim in the <input type="text" name="q2_24" style="border: none; border-bottom: 2px solid #ffb6c1; width: 60px;" />.
+  <button type="button" onclick="speakWord('Ducks swim in the pond.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.25 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_25" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> issues concern us all.
+  <button type="button" onclick="speakWord('Ecological issues concern us all.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.26 Listening Fill-in-the-Blanks:</strong><br>
+  Economic <input type="text" name="q2_26" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> is the goal.
+  <button type="button" onclick="speakWord('Economic prosperity is the goal.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.27 Listening Fill-in-the-Blanks:</strong><br>
+  Efforts to <input type="text" name="q2_27" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> security are underway.
+  <button type="button" onclick="speakWord('Efforts to heighten security are underway.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.28 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_28" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> on your idea to provide more details.
+  <button type="button" onclick="speakWord('Elaborate on your idea to provide more details.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.29 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_29" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> your skills through continuous learning.
+  <button type="button" onclick="speakWord('Elevate your skills through continuous learning.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.30 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_30" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> the code into the website.
+  <button type="button" onclick="speakWord('Embed the code into the website.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.31 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_31" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> others to make positive changes.
+  <button type="button" onclick="speakWord('Empower others to make positive changes.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.32 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_32" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> hardships to reach your goals.
+  <button type="button" onclick="speakWord('Endure hardships to reach your goals.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.33 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_33" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> the rules to maintain order.
+  <button type="button" onclick="speakWord('Enforce the rules to maintain order.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.34 Listening Fill-in-the-Blanks:</strong><br>
+  Enjoy the <input type="text" name="q2_34" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> of free speech.
+  <button type="button" onclick="speakWord('Enjoy the privilege of free speech.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.35 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_35" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> your life with meaningful experiences.
+  <button type="button" onclick="speakWord('Enrich your life with meaningful experiences.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.36 Listening Fill-in-the-Blanks:</strong><br>
+  Enroll in the course to learn new skills. <input type="text" name="q2_36" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" />
+  <button type="button" onclick="speakWord('Enroll in the course to learn new skills.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.37 Listening Fill-in-the-Blanks:</strong><br>
+  Ensure proper data <input type="text" name="q2_37" style="border: none; border-bottom: 2px solid #ffb6c1; width: 140px;" />.
+  <button type="button" onclick="speakWord('Ensure proper data transmission.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.38 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_38" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> yourself to the benefits of membership.
+  <button type="button" onclick="speakWord('Entitle yourself to the benefits of membership.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.39 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_39" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> is a fundamental human right.
+  <button type="button" onclick="speakWord('Equality is a fundamental human right.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 2 — 2.40 Listening Fill-in-the-Blanks:</strong><br>
+  <input type="text" name="q2_40" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> more effort to achieve your goals.
+  <button type="button" onclick="speakWord('Exert more effort to achieve your goals.')">🔊</button>
+  </p>
+</div>
+
+      
+     <div class="navigation">
+  <button type="button" onclick="prevQuestion()">ย้อนกลับ</button>
+  <button type="button" onclick="nextQuestion()">ถัดไป</button>
+</div>
+
+    </form>
+
+    <div class="home">
+      <a href="practicC1.html">🏠 กลับไปหน้าแบบฝึก</a>
+    </div>
+  </div>
+
+<div class="submit-container">
+  <button onclick="checkAnswers()" style="margin-top: 20px;">ส่งคำตอบ</button>
+  <div id="score-display" style="margin-top: 10px; font-weight: bold; color: #ff69b4;"></div>
+</div>
+
+<div id="feedback" style="margin-top: 20px;"></div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+  q2_1: { answer: "rumour", label: "ข้อ 2.1" },
+  q2_2: { answer: "creep", label: "ข้อ 2.2" },
+  q2_3: { answer: "dedicated", label: "ข้อ 2.3" },
+  q2_4: { answer: "distort", label: "ข้อ 2.4" },
+  q2_5: { answer: "exaggerate", label: "ข้อ 2.5" },
+  q2_6: { answer: "stereotype", label: "ข้อ 2.6" },
+  q2_7: { answer: "indulge", label: "ข้อ 2.7" },
+  q2_8: { answer: "insult", label: "ข้อ 2.8" },
+  q2_9: { answer: "interfere", label: "ข้อ 2.9" },
+  q2_10: { answer: "bleed", label: "ข้อ 2.10" },
+  q2_11: { answer: "ego", label: "ข้อ 2.11" },
+  q2_12: { answer: "nonsense", label: "ข้อ 2.12" },
+  q2_13: { answer: "manipulate", label: "ข้อ 2.13" },
+  q2_14: { answer: "obsess", label: "ข้อ 2.14" },
+  q2_15: { answer: "overlook", label: "ข้อ 2.15" },
+  q2_16: { answer: "presume", label: "ข้อ 2.16" },
+  q2_17: { answer: "provoke", label: "ข้อ 2.17" },
+  q2_18: { answer: "rip", label: "ข้อ 2.18" },
+  q2_19: { answer: "suck", label: "ข้อ 2.19" },
+  q2_20: { answer: "tempt", label: "ข้อ 2.20" },
+  q2_21: { answer: "query", label: "ข้อ 2.21" },
+  q2_22: { answer: "drain", label: "ข้อ 2.22" },
+  q2_23: { answer: "driving", label: "ข้อ 2.23" },
+  q2_24: { answer: "pond", label: "ข้อ 2.24" },
+  q2_25: { answer: "ecological", label: "ข้อ 2.25" },
+  q2_26: { answer: "prosperity", label: "ข้อ 2.26" },
+  q2_27: { answer: "heighten", label: "ข้อ 2.27" },
+  q2_28: { answer: "elaborate", label: "ข้อ 2.28" },
+  q2_29: { answer: "elevate", label: "ข้อ 2.29" },
+  q2_30: { answer: "embed", label: "ข้อ 2.30" },
+  q2_31: { answer: "empower", label: "ข้อ 2.31" },
+  q2_32: { answer: "endure", label: "ข้อ 2.32" },
+  q2_33: { answer: "enforce", label: "ข้อ 2.33" },
+  q2_34: { answer: "privilege", label: "ข้อ 2.34" },
+  q2_35: { answer: "enrich", label: "ข้อ 2.35" },
+  q2_36: { answer: "enrol", label: "ข้อ 2.36" },
+  q2_37: { answer: "transmission", label: "ข้อ 2.37" },
+  q2_38: { answer: "entitle", label: "ข้อ 2.38" },
+  q2_39: { answer: "equality", label: "ข้อ 2.39" },
+  q2_40: { answer: "exert", label: "ข้อ 2.40" },
+  };
+
+  let feedbackHTML = "<h3>เฉลย:</h3><ul>";
+  let score = 0;
+  let total = 0;
+
+  for (const key in answers) {
+    const inputEl = document.querySelector(`[name="${key}"]`);
+    if (!inputEl) continue; // ป้องกัน error ถ้ายังไม่มีคำถาม
+
+    const userAnswer = inputEl.value.trim().toLowerCase();
+    const correctAnswer = answers[key].answer.toLowerCase();
+    const label = answers[key].label;
+
+    total++;
+    if (userAnswer === correctAnswer) {
+      score++;
+      feedbackHTML += `<li>${label}: ✅ <span class="correct-answer">${userAnswer}</span></li>`;
+    } else {
+      feedbackHTML += `<li>${label}: ❌ <span class="incorrect-answer">${userAnswer}</span> → <strong class="incorrect-answer">${correctAnswer}</strong></li>`;
+    }
+  }
+
+  feedbackHTML += `</ul><p><strong>คะแนนรวม: ${score} / ${total}</strong></p>`;
+  document.getElementById("feedback").innerHTML = feedbackHTML;
+}
+
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  speechSynthesis.speak(utterance);
+}
+
+let currentQuestion = 0;
+const questions = document.querySelectorAll('.question-box');
+
+function showQuestion(index) {
+  questions.forEach((q, i) => {
+    q.classList.remove('active');
+    if (i === index) {
+      q.classList.add('active');
+    }
+  });
+}
+
+function nextQuestion() {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+  }
+}
+
+// เรียกตอนโหลดหน้าครั้งแรก
+showQuestion(currentQuestion);
+</script>
+
+
+
+<style>
+  .correct-answer {
+    color: green;
+    font-weight: bold;
+  }
+  .incorrect-answer {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+   <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
