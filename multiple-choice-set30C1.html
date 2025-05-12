@@ -664,7 +664,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     };
 
     // Loop to check each question and compare user's answer with the correct answer
-    for (let i = 1; i <= 40; i++) {
+    for (let i = 1; i <= 52; i++) {
         const name = "q" + i;
         const selected = document.querySelector(`input[name="${name}"]:checked`);
         const answer = answers[name];
@@ -678,7 +678,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     }
 
     // Display total score and feedback
-    feedbackText += `<p><strong>คะแนนรวม: ${score} / 40</strong></p>`;
+    feedbackText += `<p><strong>คะแนนรวม: ${score} / 52</strong></p>`;
     document.getElementById("feedback").innerHTML = feedbackText;
 });
 
