@@ -1,0 +1,525 @@
+<!DOCTYPE html> 
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>แบบฝึกหัดเติมคำ ชุดที่ 5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Sarabun', sans-serif;
+      background: #fffafc;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+    }
+    h1 {
+      text-align: center;
+      color: #ff4d6d;
+    }
+    .question-box {
+      display: none;
+    }
+    .question-box.active {
+      display: block;
+    }
+    .options {
+      margin-top: 1rem;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background: #ffe5ec;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #ffb6c1;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+    button:hover {
+      background: #ff7a95;
+    }
+    .home {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .home a {
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background: #ffc2d1;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    }
+    .submit-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: left;
+      border: 2px solid #ff4d6d;
+      border-radius: 10px;
+      padding: 10px 15px;
+      background-color: #ffe5ec;
+      width: 90%;
+      max-width: 500px;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 แบบฝึกหัดเติมคำ C1 ชุดที่ 5  🌸</h1>
+    <form id="quizForm">
+      <!-- Listening Fill-in-the-Blanks -->
+      
+
+    <!-- Add more questions for Listening Fill-in-the-Blanks -->
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.1 Listening Fill-in-the-Blanks:</strong><br>
+  Her accent was <input type="text" name="q5_1" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" />.
+  <button type="button" onclick="speakWord('Her accent was pronounced.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.2 Listening Fill-in-the-Blanks:</strong><br>
+  Her actions <input type="text" name="q5_2" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> the values of our company.
+  <button type="button" onclick="speakWord('Her actions embody the values of our company.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.3 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_3" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> to the university was a dream come true.
+  <button type="button" onclick="speakWord('Her admission to the university was a dream come true.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.4 Listening Fill-in-the-Blanks:</strong><br>
+  Her artwork was an <input type="text" name="q5_4" style="border: none; border-bottom: 2px solid #ffb6c1; width: 130px;" /> to many.
+  <button type="button" onclick="speakWord('Her artwork was an inspiration to many.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.5 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_5" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> for animals led her to volunteer at a shelter.
+  <button type="button" onclick="speakWord('Her compassion for animals led her to volunteer at a shelter.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.6 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_6" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> in her beliefs is unwavering.
+  <button type="button" onclick="speakWord('Her conviction in her beliefs is unwavering.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.7 Listening Fill-in-the-Blanks:</strong><br>
+  Her dress had a <input type="text" name="q5_7" style="border: none; border-bottom: 2px solid #ffb6c1; width: 130px;" /> design.
+  <button type="button" onclick="speakWord('Her dress had a distinctive design.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.8 Listening Fill-in-the-Blanks:</strong><br>
+  He received a <input type="text" name="q5_8" style="border: none; border-bottom: 2px solid #ffb6c1; width: 60px;" /> of potatoes.
+  <button type="button" onclick="speakWord('He received a sack of potatoes.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.9 Listening Fill-in-the-Blanks:</strong><br>
+  He received a <input type="text" name="q5_9" style="border: none; border-bottom: 2px solid #ffb6c1; width: 60px;" /> on the wrist for his behavior.
+  <button type="button" onclick="speakWord('He received a slap on the wrist for his behavior.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.10 Listening Fill-in-the-Blanks:</strong><br>
+  He received a <input type="text" name="q5_10" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> for his achievements.
+  <button type="button" onclick="speakWord('He received a trophy for his achievements.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.11 Listening Fill-in-the-Blanks:</strong><br>
+  He received compensation for his injuries. <input type="text" name="q5_11" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" />
+  <button type="button" onclick="speakWord('He received compensation for his injuries.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.12 Listening Fill-in-the-Blanks:</strong><br>
+  Her explanation provided <input type="text" name="q5_12" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> on the issue.
+  <button type="button" onclick="speakWord('Her explanation provided clarity on the issue.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.13 Listening Fill-in-the-Blanks:</strong><br>
+  Her explanation sounded <input type="text" name="q5_13" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> and convincing.
+  <button type="button" onclick="speakWord('Her explanation sounded credible and convincing.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.14 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_14" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> to swim limited her activities.
+  <button type="button" onclick="speakWord('Her inability to swim limited her activities.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.15 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_15" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> recounts her life experiences.
+  <button type="button" onclick="speakWord('Her memoir recounts her life experiences.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.16 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_16" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> for the prize was well-deserved.
+  <button type="button" onclick="speakWord('Her nomination for the prize was well-deserved.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.17 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_17" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> left a void in our lives.
+  <button type="button" onclick="speakWord('Her passing left a void in our lives.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.18 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_18" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> behavior raised questions.
+  <button type="button" onclick="speakWord('Her peculiar behavior raised questions.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.19 Listening Fill-in-the-Blanks:</strong><br>
+  Her performance was <input type="text" name="q5_19" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" />.
+  <button type="button" onclick="speakWord('Her performance was superb.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.20 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_20" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> cough concerned her.
+  <button type="button" onclick="speakWord('Her persistent cough concerned her.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.21 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_21" style="border: none; border-bottom: 2px solid #ffb6c1; width: 130px;" /> laid the groundwork.
+  <button type="button" onclick="speakWord('Her predecessor laid the groundwork.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.22 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_22" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> was a joyous surprise.
+  <button type="button" onclick="speakWord('Her pregnancy was a joyous surprise.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.23 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_23" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> of his proposal hurt.
+  <button type="button" onclick="speakWord('Her rejection of his proposal hurt.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.24 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_24" style="border: none; border-bottom: 2px solid #ffb6c1; width: 130px;" /> to others' feelings is admirable.
+  <button type="button" onclick="speakWord('Her sensitivity to others\' feelings is admirable.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.25 Listening Fill-in-the-Blanks:</strong><br>
+  Her skills are <input type="text" name="q5_25" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> to others.
+  <button type="button" onclick="speakWord('Her skills are superior to others.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.26 Listening Fill-in-the-Blanks:</strong><br>
+  Her speech can <input type="text" name="q5_26" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> strong emotions.
+  <button type="button" onclick="speakWord('Her speech can evoke strong emotions.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.27 Listening Fill-in-the-Blanks:</strong><br>
+  Her speech had a <input type="text" name="q5_27" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" /> impact.
+  <button type="button" onclick="speakWord('Her speech had a profound impact.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.28 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_28" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> is very supportive.
+  <button type="button" onclick="speakWord('Her spouse is very supportive.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.29 Listening Fill-in-the-Blanks:</strong><br>
+  Her suggestion was <input type="text" name="q5_29" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> but effective.
+  <button type="button" onclick="speakWord('Her suggestion was subtle but effective.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.30 Listening Fill-in-the-Blanks:</strong><br>
+  Her <input type="text" name="q5_30" style="border: none; border-bottom: 2px solid #ffb6c1; width: 110px;" /> was crucial for the case.
+  <button type="button" onclick="speakWord('Her testimony was crucial for the case.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.31 Listening Fill-in-the-Blanks:</strong><br>
+  Her voice echoed through the canyon. <input type="text" name="q5_31" style="border: none; border-bottom: 2px solid #ffb6c1; width: 60px;" />
+  <button type="button" onclick="speakWord('Her voice echoed through the canyon.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.32 Listening Fill-in-the-Blanks:</strong><br>
+  He's a dedicated <input type="text" name="q5_32" style="border: none; border-bottom: 2px solid #ffb6c1; width: 100px;" />.
+  <button type="button" onclick="speakWord('He\'s a dedicated educator.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.33 Listening Fill-in-the-Blanks:</strong><br>
+  He's a loyal <input type="text" name="q5_33" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> of the restaurant.
+  <button type="button" onclick="speakWord('He\'s a loyal patron of the restaurant.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.34 Listening Fill-in-the-Blanks:</strong><br>
+  He's a <input type="text" name="q5_34" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> and responsible adult.
+  <button type="button" onclick="speakWord('He\'s a mature and responsible adult.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.35 Listening Fill-in-the-Blanks:</strong><br>
+  He's an <input type="text" name="q5_35" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> photographer.
+  <button type="button" onclick="speakWord('He\'s an amateur photographer.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.36 Listening Fill-in-the-Blanks:</strong><br>
+  He's an enthusiastic supporter of the team. <input type="text" name="q5_36" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" />
+  <button type="button" onclick="speakWord('He\'s an enthusiastic supporter of the team.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.37 Listening Fill-in-the-Blanks:</strong><br>
+  He's an <input type="text" name="q5_37" style="border: none; border-bottom: 2px solid #ffb6c1; width: 90px;" /> with valuable information.
+  <button type="button" onclick="speakWord('He\'s an insider with valuable information.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.38 Listening Fill-in-the-Blanks:</strong><br>
+  He saw his <input type="text" name="q5_38" style="border: none; border-bottom: 2px solid #ffb6c1; width: 120px;" /> in the mirror.
+  <button type="button" onclick="speakWord('He saw his reflection in the mirror.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.39 Listening Fill-in-the-Blanks:</strong><br>
+  He's been my <input type="text" name="q5_39" style="border: none; border-bottom: 2px solid #ffb6c1; width: 70px;" /> for years.
+  <button type="button" onclick="speakWord('He\'s been my buddy for years.')">🔊</button>
+  </p>
+</div>
+
+<div class="question-box">
+  <p><strong>ชุดที่ 5 — 5.40 Listening Fill-in-the-Blanks:</strong><br>
+  He <input type="text" name="q5_40" style="border: none; border-bottom: 2px solid #ffb6c1; width: 80px;" /> visits his hometown.
+  <button type="button" onclick="speakWord('He seldom visits his hometown.')">🔊</button>
+  </p>
+</div>
+      
+     <div class="navigation">
+  <button type="button" onclick="prevQuestion()">ย้อนกลับ</button>
+  <button type="button" onclick="nextQuestion()">ถัดไป</button>
+</div>
+
+    </form>
+
+    <div class="home">
+      <a href="practicC1.html">🏠 กลับไปหน้าแบบฝึก</a>
+    </div>
+  </div>
+
+<div class="submit-container">
+  <button onclick="checkAnswers()" style="margin-top: 20px;">ส่งคำตอบ</button>
+  <div id="score-display" style="margin-top: 10px; font-weight: bold; color: #ff69b4;"></div>
+</div>
+
+<div id="feedback" style="margin-top: 20px;"></div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+  q5_1: { answer: "pronounced", label: "ข้อ 5.1" },
+  q5_2: { answer: "embody", label: "ข้อ 5.2" },
+  q5_3: { answer: "admission", label: "ข้อ 5.3" },
+  q5_4: { answer: "inspiration", label: "ข้อ 5.4" },
+  q5_5: { answer: "compassion", label: "ข้อ 5.5" },
+  q5_6: { answer: "conviction", label: "ข้อ 5.6" },
+  q5_7: { answer: "distinctive", label: "ข้อ 5.7" },
+  q5_8: { answer: "sack", label: "ข้อ 5.8" },
+  q5_9: { answer: "slap", label: "ข้อ 5.9" },
+  q5_10: { answer: "trophy", label: "ข้อ 5.10" },
+  q5_11: { answer: "compensate", label: "ข้อ 5.11" },
+  q5_12: { answer: "clarity", label: "ข้อ 5.12" },
+  q5_13: { answer: "credible", label: "ข้อ 5.13" },
+  q5_14: { answer: "inability", label: "ข้อ 5.14" },
+  q5_15: { answer: "memoir", label: "ข้อ 5.15" },
+  q5_16: { answer: "nomination", label: "ข้อ 5.16" },
+  q5_17: { answer: "passing", label: "ข้อ 5.17" },
+  q5_18: { answer: "peculiar", label: "ข้อ 5.18" },
+  q5_19: { answer: "superb", label: "ข้อ 5.19" },
+  q5_20: { answer: "persistent", label: "ข้อ 5.20" },
+  q5_21: { answer: "predecessor", label: "ข้อ 5.21" },
+  q5_22: { answer: "pregnancy", label: "ข้อ 5.22" },
+  q5_23: { answer: "rejection", label: "ข้อ 5.23" },
+  q5_24: { answer: "sensitivity", label: "ข้อ 5.24" },
+  q5_25: { answer: "superior", label: "ข้อ 5.25" },
+  q5_26: { answer: "evoke", label: "ข้อ 5.26" },
+  q5_27: { answer: "profound", label: "ข้อ 5.27" },
+  q5_28: { answer: "spouse", label: "ข้อ 5.28" },
+  q5_29: { answer: "subtle", label: "ข้อ 5.29" },
+  q5_30: { answer: "testimony", label: "ข้อ 5.30" },
+  q5_31: { answer: "echo", label: "ข้อ 5.31" },
+  q5_32: { answer: "educator", label: "ข้อ 5.32" },
+  q5_33: { answer: "patron", label: "ข้อ 5.33" },
+  q5_34: { answer: "mature", label: "ข้อ 5.34" },
+  q5_35: { answer: "amateur", label: "ข้อ 5.35" },
+  q5_36: { answer: "enthusiast", label: "ข้อ 5.36" },
+  q5_37: { answer: "insider", label: "ข้อ 5.37" },
+  q5_38: { answer: "reflection", label: "ข้อ 5.38" },
+  q5_39: { answer: "buddy", label: "ข้อ 5.39" },
+  q5_40: { answer: "seldom", label: "ข้อ 5.40" },
+  };
+
+  let feedbackHTML = "<h3>เฉลย:</h3><ul>";
+  let score = 0;
+  let total = 0;
+
+  for (const key in answers) {
+    const inputEl = document.querySelector(`[name="${key}"]`);
+    if (!inputEl) continue; // ป้องกัน error ถ้ายังไม่มีคำถาม
+
+    const userAnswer = inputEl.value.trim().toLowerCase();
+    const correctAnswer = answers[key].answer.toLowerCase();
+    const label = answers[key].label;
+
+    total++;
+    if (userAnswer === correctAnswer) {
+      score++;
+      feedbackHTML += `<li>${label}: ✅ <span class="correct-answer">${userAnswer}</span></li>`;
+    } else {
+      feedbackHTML += `<li>${label}: ❌ <span class="incorrect-answer">${userAnswer}</span> → <strong class="incorrect-answer">${correctAnswer}</strong></li>`;
+    }
+  }
+
+  feedbackHTML += `</ul><p><strong>คะแนนรวม: ${score} / ${total}</strong></p>`;
+  document.getElementById("feedback").innerHTML = feedbackHTML;
+}
+
+function speakWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = 'en-US';
+  speechSynthesis.speak(utterance);
+}
+
+let currentQuestion = 0;
+const questions = document.querySelectorAll('.question-box');
+
+function showQuestion(index) {
+  questions.forEach((q, i) => {
+    q.classList.remove('active');
+    if (i === index) {
+      q.classList.add('active');
+    }
+  });
+}
+
+function nextQuestion() {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion(currentQuestion);
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    showQuestion(currentQuestion);
+  }
+}
+
+// เรียกตอนโหลดหน้าครั้งแรก
+showQuestion(currentQuestion);
+</script>
+
+
+
+<style>
+  .correct-answer {
+    color: green;
+    font-weight: bold;
+  }
+  .incorrect-answer {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+   <script>
+    if (!localStorage.getItem("loggedIn") && !sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
